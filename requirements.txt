@@ -1,0 +1,135 @@
+absl-py==2.4.0
+aiofiles==23.2.1
+aiohappyeyeballs==2.6.1
+aiohttp==3.13.3
+aiosignal==1.4.0
+alembic==1.18.4
+anaconda-anon-usage @ file:///croot/anaconda-anon-usage_1743190149852/work
+annotated-types==0.7.0
+anyio==4.8.0
+archspec @ file:///croot/archspec_1709217642129/work
+asyncer==0.0.8
+attrs==25.4.0
+audioop-lts==0.2.2
+boltons @ file:///croot/boltons_1737061692029/work
+Brotli @ file:///croot/brotli-split_1736182465122/work
+cachetools==7.0.5
+certifi==2025.1.31
+cffi @ file:///croot/cffi_1736182496610/work
+charset-normalizer==3.4.1
+click==8.1.8
+cloudpickle==3.1.2
+colorama==0.4.6
+colorful==0.5.6
+colorlog==6.10.1
+conda @ file:///home/conda/feedstock_root/build_artifacts/conda_1749201719497/work/conda-src
+conda-anaconda-telemetry @ file:///croot/conda-anaconda-telemetry_1744662545519/work
+conda-anaconda-tos @ file:///croot/conda-anaconda-tos_1744823865095/work
+conda-content-trust @ file:///work/perseverance-python-buildout/croot/conda-content-trust_1728507652179/work
+conda-libmamba-solver @ file:///croot/conda-libmamba-solver_1745607008911/work/src
+conda-package-handling @ file:///croot/conda-package-handling_1731369021572/work
+conda_package_streaming @ file:///croot/conda-package-streaming_1731366181612/work
+cryptography @ file:///croot/cryptography_1740577832525/work
+diskcache==5.6.3
+distro @ file:///work/perseverance-python-buildout/croot/distro_1728480038109/work
+dspy==3.1.3
+dspy-ai==3.1.3
+fastapi==0.115.11
+fastuuid==0.14.0
+ffmpy==0.5.0
+filelock==3.17.0
+frozendict @ file:///work/perseverance-python-buildout/croot/frozendict_1728480246023/work
+frozenlist==1.8.0
+fsspec==2025.3.0
+gepa==0.0.26
+google-auth==2.49.1
+google-genai==1.67.0
+gradio==5.20.1
+gradio_client==1.7.2
+greenlet==3.3.2
+groovy==0.1.2
+h11==0.14.0
+httpcore==1.0.7
+httpx==0.28.1
+huggingface-hub==0.29.2
+idna==3.10
+importlib_metadata==8.7.1
+Jinja2==3.1.6
+jiter==0.13.0
+json_repair==0.58.5
+jsonpatch @ file:///work/perseverance-python-buildout/croot/jsonpatch_1728480643704/work
+jsonpointer==2.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+libmambapy @ file:///croot/mamba-split_1734469473285/work/libmambapy
+litellm==1.82.1
+Mako==1.3.10
+markdown-it-py==3.0.0
+MarkupSafe==2.1.5
+mdurl==0.1.2
+menuinst @ file:///croot/menuinst_1738943421398/work
+mpmath==1.3.0
+multidict==6.7.1
+networkx==3.6.1
+numpy==2.2.3
+ollama==0.6.1
+openai==2.26.0
+optuna==4.7.0
+orjson==3.10.15
+packaging @ file:///croot/packaging_1734472115061/work
+pandas==2.2.3
+pillow==11.1.0
+platformdirs @ file:///croot/platformdirs_1744273047827/work
+pluggy @ file:///croot/pluggy_1733169620750/work
+prettyprinter==0.18.0
+propcache==0.4.1
+pyasn1==0.6.2
+pyasn1_modules==0.4.2
+pycosat @ file:///croot/pycosat_1736868411880/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydantic==2.10.6
+pydantic_core==2.27.2
+pydub==0.25.1
+Pygments @ file:///croot/pygments_1744664115646/work
+PySocks @ file:///work/perseverance-python-buildout/croot/pysocks_1728406488267/work
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+python-multipart==0.0.20
+pytz==2025.1
+PyYAML==6.0.2
+referencing==0.37.0
+regex==2026.2.28
+requests @ file:///croot/requests_1731001047220/work
+rich @ file:///croot/rich_1732638988216/work
+rpds-py==0.30.0
+ruamel.yaml @ file:///croot/ruamel.yaml_1745960308213/work
+ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1745937156736/work
+ruff==0.9.10
+safehttpx==0.1.6
+semantic-version==2.10.0
+setuptools==78.1.1
+shellingham==1.5.4
+six==1.17.0
+sniffio==1.3.1
+SQLAlchemy==2.0.48
+starlette==0.46.0
+sympy==1.14.0
+tenacity==9.1.4
+tiktoken==0.12.0
+tokenizers==0.22.2
+tomlkit==0.13.2
+torch==2.10.0
+torchvision==0.25.0
+tqdm @ file:///croot/tqdm_1738943461672/work
+truststore @ file:///croot/truststore_1736550128580/work
+typer==0.15.2
+typing_extensions @ file:///croot/typing_extensions_1734714855955/work
+tzdata==2025.1
+urllib3 @ file:///croot/urllib3_1737133636136/work
+uvicorn==0.34.0
+websockets==15.0.1
+wheel==0.45.1
+xxhash==3.6.0
+yarl==1.23.0
+zipp==3.23.0
+zstandard @ file:///croot/zstandard_1731356343166/work

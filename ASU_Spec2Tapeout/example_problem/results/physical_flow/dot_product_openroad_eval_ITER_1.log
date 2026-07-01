@@ -1,0 +1,28 @@
+OpenROAD v2.0-21966-g66559c8bcf 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+
+==================== Summary ====================
+Design area 27326 u^2 55% utilization.
+tns max 0.00
+wns max 0.00
+worst slack max 0.17
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.09e-03   2.07e-04   1.23e-09   2.30e-03   7.6%
+Combinational          1.36e-02   1.29e-02   1.17e-08   2.65e-02  88.2%
+Clock                  8.66e-04   3.72e-04   2.71e-10   1.24e-03   4.1%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.66e-02   1.35e-02   1.32e-08   3.01e-02 100.0%
+                          55.2%      44.8%       0.0%
+Clock Period: 4.500 ns
+Metrics written to p5.json
+WNS Score: 27.74/40
+TNS Score: 20.00/20
+Power Score: 17.38/20
+Area Score: 12.83/20
+Final Score: 77.94119401347498/100

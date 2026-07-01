@@ -1,0 +1,2303 @@
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/util/preprocessLib.py -i /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -o objects/sky130hd/dot_product/base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Opening file for replace: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Commented 0 lines containing "original_pin"
+Replaced malformed functions 0
+Replaced capacitive_load_unit 0
+Writing replaced file: objects/sky130hd/dot_product/base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+mkdir -p results/sky130hd/dot_product/base/
+echo 4.5 > results/sky130hd/dot_product/base/clock_period.txt
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/synth.sh /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/synth_canonicalize.tcl ./logs/sky130hd/dot_product/base/1_1_yosys_canonicalize.log
+Using ABC speed script.
+Extracting clock period from SDC file: ./results/sky130hd/dot_product/base/clock_period.txt
+Setting clock period to 4.5
+1. Executing Liberty frontend: ./objects/sky130hd/dot_product/base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+2. Executing Liberty frontend: ./objects/sky130hd/dot_product/base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/designs/src/dot_product/dot_product.v
+4. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/cells_clkgate_hd.v
+5. Executing HIERARCHY pass (managing design hierarchy).
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\dot_product'.
+6.1. Analyzing design hierarchy..
+6.2. Analyzing design hierarchy..
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Warning: Ignoring module dot_product because it contains processes (run 'proc' command first).
+8. Executing RTLIL backend.
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 5331ba88fb, CPU: user 0.15s system 0.01s, MEM: 50.25 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 78% 4x read_liberty (0 sec), 7% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.20[h:]min:sec. CPU time: user 0.18 sys 0.01 (99%). Peak memory: 53760KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/synth.sh /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/synth.tcl ./logs/sky130hd/dot_product/base/1_1_yosys.log
+Using ABC speed script.
+Extracting clock period from SDC file: ./results/sky130hd/dot_product/base/clock_period.txt
+Setting clock period to 4.5
+1. Executing RTLIL frontend.
+2. Executing HIERARCHY pass (managing design hierarchy).
+2.1. Analyzing design hierarchy..
+2.2. Analyzing design hierarchy..
+3. Executing SYNTH pass.
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+3.1.1. Analyzing design hierarchy..
+3.1.2. Analyzing design hierarchy..
+3.2. Executing PROC pass (convert processes to netlists).
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+3.3. Executing FLATTEN pass (flatten design).
+3.4. Executing OPT_EXPR pass (perform const folding).
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.6. Executing CHECK pass (checking for obvious problems).
+3.7. Executing OPT pass (performing simple optimizations).
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+3.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.7.8. Executing OPT_EXPR pass (perform const folding).
+3.7.9. Finished OPT passes. (There is nothing left to do.)
+3.8. Executing FSM pass (extract and optimize FSM).
+3.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+3.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+3.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+3.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+3.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+3.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+3.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+3.9. Executing OPT pass (performing simple optimizations).
+3.9.1. Executing OPT_EXPR pass (perform const folding).
+3.9.2. Executing OPT_MERGE pass (detect identical cells).
+3.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.9.5. Executing OPT_MERGE pass (detect identical cells).
+3.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.9.8. Executing OPT_EXPR pass (perform const folding).
+3.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+3.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.9.12. Executing OPT_MERGE pass (detect identical cells).
+3.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+3.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.9.15. Executing OPT_EXPR pass (perform const folding).
+3.9.16. Finished OPT passes. (There is nothing left to do.)
+3.10. Executing WREDUCE pass (reducing word size of cells).
+3.11. Executing PEEPOPT pass (run peephole optimizers).
+3.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.13. Executing ALUMACC pass (create $alu and $macc cells).
+3.14. Executing SHARE pass (SAT-based resource sharing).
+3.15. Executing OPT pass (performing simple optimizations).
+3.15.1. Executing OPT_EXPR pass (perform const folding).
+3.15.2. Executing OPT_MERGE pass (detect identical cells).
+3.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.15.5. Executing OPT_MERGE pass (detect identical cells).
+3.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.15.8. Executing OPT_EXPR pass (perform const folding).
+3.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+3.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.15.12. Executing OPT_MERGE pass (detect identical cells).
+3.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+3.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.15.15. Executing OPT_EXPR pass (perform const folding).
+3.15.16. Finished OPT passes. (There is nothing left to do.)
+3.16. Executing MEMORY pass.
+3.16.1. Executing OPT_MEM pass (optimize memories).
+3.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+3.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+3.16.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+3.16.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+3.16.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.16.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+3.16.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+3.16.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.16.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+3.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+4. Executing SYNTH pass.
+4.1. Executing OPT pass (performing simple optimizations).
+4.1.1. Executing OPT_EXPR pass (perform const folding).
+4.1.2. Executing OPT_MERGE pass (detect identical cells).
+4.1.3. Executing OPT_DFF pass (perform DFF optimizations).
+4.1.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+4.1.5. Finished fast OPT passes.
+4.2. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+4.3. Executing OPT pass (performing simple optimizations).
+4.3.1. Executing OPT_EXPR pass (perform const folding).
+4.3.2. Executing OPT_MERGE pass (detect identical cells).
+4.3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+4.3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+4.3.5. Executing OPT_MERGE pass (detect identical cells).
+4.3.6. Executing OPT_SHARE pass.
+4.3.7. Executing OPT_DFF pass (perform DFF optimizations).
+4.3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+4.3.9. Executing OPT_EXPR pass (perform const folding).
+4.3.10. Finished OPT passes. (There is nothing left to do.)
+4.4. Executing TECHMAP pass (map to technology primitives).
+4.4.1. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/tools/install/yosys/bin/../share/yosys/techmap.v
+4.4.2. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/common/lcu_kogge_stone.v
+4.4.3. Continuing TECHMAP pass.
+4.5. Executing OPT pass (performing simple optimizations).
+4.5.1. Executing OPT_EXPR pass (perform const folding).
+4.5.2. Executing OPT_MERGE pass (detect identical cells).
+4.5.3. Executing OPT_DFF pass (perform DFF optimizations).
+4.5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+4.5.5. Finished fast OPT passes.
+4.6. Executing ABC pass (technology mapping using ABC).
+4.6.1. Extracting gate netlist of module `\dot_product' to `<abc-temp-dir>/input.blif'..
+4.7. Executing OPT pass (performing simple optimizations).
+4.7.1. Executing OPT_EXPR pass (perform const folding).
+4.7.2. Executing OPT_MERGE pass (detect identical cells).
+4.7.3. Executing OPT_DFF pass (perform DFF optimizations).
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+4.7.5. Finished fast OPT passes.
+4.8. Executing HIERARCHY pass (managing design hierarchy).
+4.8.1. Analyzing design hierarchy..
+4.8.2. Analyzing design hierarchy..
+4.9. Printing statistics.
+4.10. Executing CHECK pass (checking for obvious problems).
+5. Executing OPT pass (performing simple optimizations).
+5.1. Executing OPT_EXPR pass (perform const folding).
+5.2. Executing OPT_MERGE pass (detect identical cells).
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+5.5. Executing OPT_MERGE pass (detect identical cells).
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+5.8. Executing OPT_EXPR pass (perform const folding).
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+5.12. Executing OPT_MERGE pass (detect identical cells).
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+5.15. Executing OPT_EXPR pass (perform const folding).
+5.16. Finished OPT passes. (There is nothing left to do.)
+6. Executing EXTRACT_FA pass (find and extract full/half adders).
+7. Executing TECHMAP pass (map to technology primitives).
+7.1. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/cells_adders_hd.v
+7.2. Continuing TECHMAP pass.
+8. Executing TECHMAP pass (map to technology primitives).
+8.1. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/tools/install/yosys/bin/../share/yosys/techmap.v
+8.2. Continuing TECHMAP pass.
+9. Executing OPT pass (performing simple optimizations).
+9.1. Executing OPT_EXPR pass (perform const folding).
+9.2. Executing OPT_MERGE pass (detect identical cells).
+9.3. Executing OPT_DFF pass (perform DFF optimizations).
+9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.5. Finished fast OPT passes.
+10. Executing TECHMAP pass (map to technology primitives).
+10.1. Executing Verilog-2005 frontend: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/cells_latch_hd.v
+10.2. Continuing TECHMAP pass.
+11. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+11.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+12. Executing OPT pass (performing simple optimizations).
+12.1. Executing OPT_EXPR pass (perform const folding).
+12.2. Executing OPT_MERGE pass (detect identical cells).
+12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+12.5. Executing OPT_MERGE pass (detect identical cells).
+12.6. Executing OPT_DFF pass (perform DFF optimizations).
+12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+12.8. Executing OPT_EXPR pass (perform const folding).
+12.9. Finished OPT passes. (There is nothing left to do.)
+abc -script /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/abc_speed.script -liberty ./objects/sky130hd/dot_product/base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -constr ./objects/sky130hd/dot_product/base/abc.constr -dont_use sky130_fd_sc_hd__probe_p_8 -dont_use sky130_fd_sc_hd__probec_p_8 -dont_use sky130_fd_sc_hd__lpflow_bleeder_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_12 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_3 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_6 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_inputiso0n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso0p_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1p_1 -dont_use sky130_fd_sc_hd__lpflow_inputisolatch_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_16 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_2 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_4 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_8 -dont_use sky130_fd_sc_hd__lpflow_isobufsrckapwr_16 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 -D 4.5
+13. Executing ABC pass (technology mapping using ABC).
+13.1. Extracting gate netlist of module `\dot_product' to `<abc-temp-dir>/input.blif'..
+13.1.1. Executing ABC.
+13.1.2. Re-integrating ABC results.
+14. Executing SETUNDEF pass (replace undef values with defined constants).
+15. Executing SPLITNETS pass (splitting up multi-bit signals).
+16. Executing OPT_CLEAN pass (remove unused cells and wires).
+17. Executing HILOMAP pass (mapping to constant drivers).
+18. Executing INSBUF pass (insert buffer cells for connected wires).
+19. Executing CHECK pass (checking for obvious problems).
+20. Printing statistics.
+21. Executing CHECK pass (checking for obvious problems).
+22. Executing Verilog backend.
+22.1. Executing BMUXMAP pass.
+22.2. Executing DEMUXMAP pass.
+exec cp /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/designs/sky130hd/dot_product/constraint.sdc ./results/sky130hd/dot_product/base/1_synth.sdc
+End of script. Logfile hash: 15ceec4c03, CPU: user 1.87s system 0.05s, MEM: 65.37 MB peak
+Yosys 0.53 (git sha1 53c22ab7c, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 30% 2x abc (0 sec), 24% 1x extract_fa (0 sec), ...
+Elapsed time: 0:02.77[h:]min:sec. CPU time: user 2.56 sys 0.18 (99%). Peak memory: 66936KB.
+mkdir -p ./results/sky130hd/dot_product/base ./logs/sky130hd/dot_product/base ./reports/sky130hd/dot_product/base
+cp ./results/sky130hd/dot_product/base/1_1_yosys.v ./results/sky130hd/dot_product/base/1_synth.v
+OpenROAD v2.0-21966-g66559c8bcf 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 12 thread(s).
+mkdir -p ./objects/sky130hd/dot_product/base
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_1_floorplan floorplan
+Running floorplan.tcl, stage 2_1_floorplan
+[INFO ODB-0227] LEF file: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef, created 13 layers, 25 vias
+[INFO ODB-0227] LEF file: /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef, created 441 library cells
+Master sky130_ef_sc_hd__decap_12 is loaded but not used in the design
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+number instances in verilog is 2664
+[WARNING IFP-0028] Core area lower left (1.000, 1.000) snapped to (1.380, 2.720).
+[INFO IFP-0001] Added 82 rows of 487 site unithd.
+source /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/make_tracks.tcl
+repair_timing -verbose -setup_margin 0 -repair_tns 100 -match_cell_footprint
+[WARNING RSZ-0021] no estimated parasitics. Using wire load models.
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0033] No hold violations found.
+Default units for flow
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 25272 u^2 51% utilization.
+Elapsed time: 0:00.95[h:]min:sec. CPU time: user 0.61 sys 0.45 (112%). Peak memory: 121348KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_2_floorplan_macro macro_place
+Running macro_place.tcl, stage 2_2_floorplan_macro
+No macros found: Skipping macro_placement
+Elapsed time: 0:00.31[h:]min:sec. CPU time: user 0.27 sys 0.03 (98%). Peak memory: 110368KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_3_floorplan_tapcell tapcell
+Running tapcell.tcl, stage 2_3_floorplan_tapcell
+[INFO TAP-0005] Inserted 672 tapcells.
+Elapsed time: 0:00.30[h:]min:sec. CPU time: user 0.24 sys 0.05 (98%). Peak memory: 108740KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 2_4_floorplan_pdn pdn
+Running pdn.tcl, stage 2_4_floorplan_pdn
+[INFO PDN-0001] Inserting grid: grid
+Elapsed time: 0:00.39[h:]min:sec. CPU time: user 0.39 sys 0.22 (158%). Peak memory: 114764KB.
+cp ./results/sky130hd/dot_product/base/2_4_floorplan_pdn.odb ./results/sky130hd/dot_product/base/2_floorplan.odb
+cp ./results/sky130hd/dot_product/base/2_1_floorplan.sdc ./results/sky130hd/dot_product/base/2_floorplan.sdc
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_1_place_gp_skip_io global_place_skip_io
+Running global_place_skip_io.tcl, stage 3_1_place_gp_skip_io
+global_placement -skip_io -density 0.55 -pad_left 0 -pad_right 0
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  1.380  2.720 ) ( 225.400 225.760 ) um
+[INFO GPL-0006] Number of instances:              3336
+[INFO GPL-0007] Movable instances:                2664
+[INFO GPL-0008] Fixed instances:                   672
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   3570
+[INFO GPL-0011] Number of pins:                   8914
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 226.820 226.820 ) um
+[INFO GPL-0013] Core BBox: (  1.380  2.720 ) ( 225.400 225.760 ) um
+[INFO GPL-0016] Core area:                   49965.421 um^2
+[INFO GPL-0017] Fixed instances area:          840.806 um^2
+[INFO GPL-0018] Movable instances area:      25271.738 um^2
+[INFO GPL-0019] Utilization:                    51.444 %
+[INFO GPL-0020] Standard cells area:         25271.738 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0023] Placement target density:       0.5500
+[INFO GPL-0024] Movable insts average area:      9.486 um^2
+[INFO GPL-0025] Ideal bin area:                 17.248 um^2
+[INFO GPL-0026] Ideal bin count:                  2896
+[INFO GPL-0027] Total bin area:              49965.421 um^2
+[INFO GPL-0028] Bin count (X, Y):          32 ,     32
+[INFO GPL-0029] Bin size (W * H):       7.001 *  6.970 um
+[INFO GPL-0030] Number of bins:                   1024
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        1 |   0.9957 |  8.293093e+06 |   +0.00% |  7.70e-15 |      
+       10 |   0.9915 |  5.473882e+06 |  -33.99% |  1.19e-14 |      
+       20 |   0.9914 |  5.335613e+06 |   -2.53% |  1.95e-14 |      
+       30 |   0.9910 |  5.346056e+06 |   +0.20% |  3.17e-14 |      
+       40 |   0.9906 |  5.336590e+06 |   -0.18% |  5.16e-14 |      
+       50 |   0.9905 |  5.322723e+06 |   -0.26% |  8.41e-14 |      
+       60 |   0.9906 |  5.315898e+06 |   -0.13% |  1.37e-13 |      
+       70 |   0.9905 |  5.324670e+06 |   +0.17% |  2.23e-13 |      
+       80 |   0.9901 |  5.360399e+06 |   +0.67% |  3.63e-13 |      
+       90 |   0.9894 |  5.436115e+06 |   +1.41% |  5.92e-13 |      
+      100 |   0.9892 |  5.589984e+06 |   +2.83% |  9.64e-13 |      
+      110 |   0.9881 |  5.881624e+06 |   +5.22% |  1.57e-12 |      
+      120 |   0.9858 |  6.425542e+06 |   +9.25% |  2.56e-12 |      
+      130 |   0.9721 |  7.505429e+06 |  +16.81% |  4.17e-12 |      
+      140 |   0.9512 |  9.284935e+06 |  +23.71% |  6.79e-12 |      
+      150 |   0.9269 |  1.126914e+07 |  +21.37% |  1.11e-11 |      
+      160 |   0.8986 |  1.335308e+07 |  +18.49% |  1.80e-11 |      
+      170 |   0.8786 |  1.523478e+07 |  +14.09% |  2.93e-11 |      
+      180 |   0.8535 |  1.699071e+07 |  +11.53% |  4.77e-11 |      
+      190 |   0.8233 |  1.866624e+07 |   +9.86% |  7.77e-11 |      
+      200 |   0.7962 |  2.017848e+07 |   +8.10% |  1.27e-10 |      
+      210 |   0.7524 |  2.214527e+07 |   +9.75% |  2.06e-10 |      
+      220 |   0.7122 |  2.411131e+07 |   +8.88% |  3.36e-10 |      
+      230 |   0.6733 |  2.599996e+07 |   +7.83% |  5.47e-10 |      
+      240 |   0.6250 |  2.740858e+07 |   +5.42% |  8.91e-10 |      
+      250 |   0.5835 |  2.901080e+07 |   +5.85% |  1.45e-09 |      
+      260 |   0.5387 |  3.070569e+07 |   +5.84% |  2.36e-09 |      
+      270 |   0.5013 |  3.224364e+07 |   +5.01% |  3.85e-09 |      
+      280 |   0.4574 |  3.378690e+07 |   +4.79% |  6.26e-09 |      
+      290 |   0.4131 |  3.508097e+07 |   +3.83% |  1.02e-08 |      
+      300 |   0.3659 |  3.601117e+07 |   +2.65% |  1.66e-08 |      
+      310 |   0.3251 |  3.684020e+07 |   +2.30% |  2.57e-08 |      
+      320 |   0.2912 |  3.737776e+07 |   +1.46% |  3.79e-08 |      
+      330 |   0.2548 |  3.764399e+07 |   +0.71% |  5.59e-08 |      
+      340 |   0.2271 |  3.820176e+07 |   +1.48% |  8.23e-08 |      
+      350 |   0.1965 |  3.855841e+07 |   +0.93% |  1.21e-07 |      
+      360 |   0.1642 |  3.884418e+07 |   +0.74% |  1.79e-07 |      
+      370 |   0.1391 |  3.908820e+07 |   +0.63% |  2.63e-07 |      
+      380 |   0.1166 |  3.941789e+07 |   +0.84% |  3.87e-07 |      
+      390 |   0.0985 |  3.960651e+07 |   +0.48% |  5.71e-07 |      
+[INFO GPL-1001] Finished with Overflow: 0.098502
+[INFO GPL-1002] Placed Cell Area            25271.7376
+[INFO GPL-1003] Available Free Area         49124.6144
+[INFO GPL-1004] Minimum Feasible Density        0.5200 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.5716
+[INFO GPL-1008]     - For 80% usage of free space: 0.6431
+[INFO GPL-1009]     - For 50% usage of free space: 1.0289
+Elapsed time: 0:01.40[h:]min:sec. CPU time: user 5.54 sys 0.86 (454%). Peak memory: 114456KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_2_place_iop io_placement
+Running io_placement.tcl, stage 3_2_place_iop
+place_pins -hor_layers met3 -ver_layers met2 -min_distance 4 -min_distance_in_tracks
+Found 0 macro blocks.
+[INFO PPL-0001] Number of available slots 410
+[INFO PPL-0002] Number of I/O             150
+[INFO PPL-0003] Number of I/O w/sink      150
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 10620.49 um.
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.27 sys 0.04 (97%). Peak memory: 112112KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_3_place_gp global_place
+Running global_place.tcl, stage 3_3_place_gp
+source /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/fastroute.tcl
+global_placement -density 0.55 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  1.380  2.720 ) ( 225.400 225.760 ) um
+[INFO GPL-0006] Number of instances:              3336
+[INFO GPL-0007] Movable instances:                2664
+[INFO GPL-0008] Fixed instances:                   672
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   3570
+[INFO GPL-0011] Number of pins:                   9064
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 226.820 226.820 ) um
+[INFO GPL-0013] Core BBox: (  1.380  2.720 ) ( 225.400 225.760 ) um
+[INFO GPL-0016] Core area:                   49965.421 um^2
+[INFO GPL-0017] Fixed instances area:          840.806 um^2
+[INFO GPL-0018] Movable instances area:      25271.738 um^2
+[INFO GPL-0019] Utilization:                    51.444 %
+[INFO GPL-0020] Standard cells area:         25271.738 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[InitialPlace]  Iter: 1 conjugate gradient residual: 0.00003087 HPWL: 71890026
+[InitialPlace]  Iter: 2 conjugate gradient residual: 0.00000347 HPWL: 55496706
+[InitialPlace]  Iter: 3 conjugate gradient residual: 0.00000151 HPWL: 55571844
+[InitialPlace]  Iter: 4 conjugate gradient residual: 0.00000273 HPWL: 55645000
+[InitialPlace]  Iter: 5 conjugate gradient residual: 0.00000497 HPWL: 55649930
+[INFO GPL-0023] Placement target density:       0.5500
+[INFO GPL-0024] Movable insts average area:      9.486 um^2
+[INFO GPL-0025] Ideal bin area:                 17.248 um^2
+[INFO GPL-0026] Ideal bin count:                  2896
+[INFO GPL-0027] Total bin area:              49965.421 um^2
+[INFO GPL-0028] Bin count (X, Y):          32 ,     32
+[INFO GPL-0029] Bin size (W * H):       7.001 *  6.970 um
+[INFO GPL-0030] Number of bins:                   1024
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        1 |   0.9372 |  2.999642e+07 |   +0.00% |  6.95e-15 |      
+       10 |   0.8538 |  3.661998e+07 |  +22.08% |  1.08e-14 |      
+[INFO GPL-0100] Timing-driven iteration 1/5, virtual: true.
+[INFO GPL-0101]    Iter: 18, overflow: 0.783, keep resizer changes at: 0.3, HPWL: 38285941
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3570
+    final |     +2.5% |     565 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 565 instances.
+[INFO GPL-0106] Timing-driven: worst slack -2.74e-10
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+       20 |   0.7758 |  3.800025e+07 |   +3.77% |  1.76e-14 |      
+       30 |   0.7427 |  3.804535e+07 |   +0.12% |  2.86e-14 |      
+       40 |   0.7251 |  3.772329e+07 |   -0.85% |  4.66e-14 |      
+       50 |   0.7200 |  3.727520e+07 |   -1.19% |  7.59e-14 |      
+       60 |   0.7151 |  3.696287e+07 |   -0.84% |  1.24e-13 |      
+       70 |   0.7170 |  3.683783e+07 |   -0.34% |  2.01e-13 |      
+       80 |   0.7149 |  3.685330e+07 |   +0.04% |  3.28e-13 |      
+       90 |   0.7126 |  3.692321e+07 |   +0.19% |  5.34e-13 |      
+      100 |   0.7108 |  3.698075e+07 |   +0.16% |  8.70e-13 |      
+      110 |   0.7103 |  3.699744e+07 |   +0.05% |  1.42e-12 |      
+      120 |   0.7110 |  3.697200e+07 |   -0.07% |  2.31e-12 |      
+      130 |   0.7123 |  3.693808e+07 |   -0.09% |  3.76e-12 |      
+      140 |   0.7132 |  3.692657e+07 |   -0.03% |  6.12e-12 |      
+      150 |   0.7136 |  3.694368e+07 |   +0.05% |  9.97e-12 |      
+      160 |   0.7131 |  3.697908e+07 |   +0.10% |  1.62e-11 |      
+      170 |   0.7118 |  3.702078e+07 |   +0.11% |  2.65e-11 |      
+      180 |   0.7094 |  3.706300e+07 |   +0.11% |  4.31e-11 |      
+      190 |   0.7057 |  3.711491e+07 |   +0.14% |  7.02e-11 |      
+      200 |   0.6970 |  3.720670e+07 |   +0.25% |  1.14e-10 |      
+      210 |   0.6791 |  3.737120e+07 |   +0.44% |  1.86e-10 |      
+      220 |   0.6589 |  3.764423e+07 |   +0.73% |  3.03e-10 |      
+[INFO GPL-0100] Timing-driven iteration 2/5, virtual: true.
+[INFO GPL-0101]    Iter: 229, overflow: 0.634, keep resizer changes at: 0.3, HPWL: 37992012
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3570
+    final |     +2.3% |     610 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 610 instances.
+[INFO GPL-0106] Timing-driven: worst slack -2.52e-10
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      230 |   0.6304 |  3.804327e+07 |   +1.06% |  4.94e-10 |      
+[INFO GPL-0088] Routability snapshot saved at iter = 237
+      240 |   0.5881 |  3.866866e+07 |   +1.64% |  8.05e-10 |      
+      250 |   0.5483 |  3.911081e+07 |   +1.14% |  1.31e-09 |      
+      260 |   0.5154 |  3.959540e+07 |   +1.24% |  2.14e-09 |      
+      270 |   0.4797 |  4.006153e+07 |   +1.18% |  3.48e-09 |      
+      280 |   0.4335 |  4.060758e+07 |   +1.36% |  5.67e-09 |      
+      290 |   0.3934 |  4.107198e+07 |   +1.14% |  9.23e-09 |      
+      300 |   0.3524 |  4.160274e+07 |   +1.29% |  1.50e-08 |      
+      310 |   0.3121 |  4.209057e+07 |   +1.17% |  2.26e-08 |      
+[INFO GPL-0040] Routability iteration: 1
+[INFO GPL-0041] Total routing overflow: 0.2234
+[INFO GPL-0042] Number of overflowed tiles: 5 (0.49%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 1.0348
+[INFO GPL-0044] Average top 1.0% routing congestion: 1.0006
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.9701
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.9259
+[INFO GPL-0047] Routability iteration weighted routing congestion: 1.0177
+[INFO GPL-0048] Routing congestion (1.0177) lower than previous minimum (1e+30). Updating minimum.
+[INFO GPL-0051] Inflated area:                  60.945 um^2 (+0.24%)
+[INFO GPL-0052] Placement target density:       0.5500
+[INFO GPL-0058] White space area:            49124.614 um^2 (+0.00%)
+[INFO GPL-0059] Movable instances area:      27079.483 um^2 (+0.23%)
+[INFO GPL-0060] Total filler area:            1746.801 um^2 (-0.00%)
+[INFO GPL-0061] Total non-inflated area:     27079.483 um^2 (+0.23%)
+[INFO GPL-0062] Total inflated area:         27140.428 um^2 (+0.23%)
+[INFO GPL-0063] New Target Density:             0.5512
+[INFO GPL-0089] Routability end iteration: revert back to snapshot
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      320 |   0.5719 |  3.884700e+07 |   -7.71% |  9.31e-10 |      
+      330 |   0.5410 |  3.920275e+07 |   +0.92% |  1.37e-09 |      
+      340 |   0.5164 |  3.948763e+07 |   +0.73% |  2.02e-09 |      
+      350 |   0.4899 |  3.978614e+07 |   +0.76% |  2.97e-09 |      
+      360 |   0.4583 |  4.023855e+07 |   +1.14% |  4.38e-09 |      
+      370 |   0.4238 |  4.065913e+07 |   +1.05% |  6.46e-09 |      
+      380 |   0.3907 |  4.116676e+07 |   +1.25% |  9.51e-09 |      
+      390 |   0.3551 |  4.163190e+07 |   +1.13% |  1.40e-08 |      
+      400 |   0.3228 |  4.194540e+07 |   +0.75% |  2.06e-08 |      
+[INFO GPL-0040] Routability iteration: 2
+[INFO GPL-0041] Total routing overflow: 0.0822
+[INFO GPL-0042] Number of overflowed tiles: 3 (0.29%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 1.0038
+[INFO GPL-0044] Average top 1.0% routing congestion: 0.9829
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.9641
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.9266
+[INFO GPL-0047] Routability iteration weighted routing congestion: 0.9934
+[INFO GPL-0050] Weighted routing congestion is lower than target routing congestion(1.0100), end routability optimization.
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      410 |   0.2927 |  4.219431e+07 |   +0.59% |  3.04e-08 |      
+[INFO GPL-0100] Timing-driven iteration 3/5, virtual: false.
+[INFO GPL-0101]    Iter: 413, overflow: 0.283, keep resizer changes at: 0.3, HPWL: 42248788
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3570
+    final |     +2.8% |     688 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 688 instances.
+[INFO GPL-0106] Timing-driven: worst slack -1.74e-10
+[INFO GPL-0107] Timing-driven: repair_design delta area: 697.170 um^2 (+2.75%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 0.5654325
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      420 |   0.2838 |  3.863808e+07 |   -8.43% |  4.48e-08 |      
+      430 |   0.2611 |  3.924056e+07 |   +1.56% |  6.60e-08 |      
+      440 |   0.2113 |  4.013435e+07 |   +2.28% |  9.72e-08 |      
+[INFO GPL-0100] Timing-driven iteration 4/5, virtual: false.
+[INFO GPL-0101]    Iter: 444, overflow: 0.204, keep resizer changes at: 0.3, HPWL: 40124441
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3570
+    final |     +0.1% |     361 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 361 instances.
+[INFO GPL-0106] Timing-driven: worst slack -1.71e-10
+[INFO GPL-0107] Timing-driven: repair_design delta area: 13.763 um^2 (+0.05%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 0.56571263
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      450 |   0.1880 |  4.008049e+07 |   -0.13% |  1.43e-07 |      
+      460 |   0.1566 |  4.041949e+07 |   +0.85% |  2.11e-07 |      
+[INFO GPL-0100] Timing-driven iteration 5/5, virtual: false.
+[INFO GPL-0101]    Iter: 466, overflow: 0.144, keep resizer changes at: 0.3, HPWL: 40623985
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3570
+    final |     -0.2% |     343 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 343 instances.
+[INFO GPL-0106] Timing-driven: worst slack -1.11e-10
+[INFO GPL-0107] Timing-driven: repair_design delta area: -43.792 um^2 (-0.17%)
+[INFO GPL-0108] Timing-driven: repair_design, gpl cells created: 0 (+0.00%)
+[INFO GPL-0109] Timing-driven: inserted buffers as reported by repair_design: 0
+[INFO GPL-0110] Timing-driven: new target density: 0.5648212
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      470 |   0.1392 |  4.069210e+07 |   +0.67% |  3.11e-07 |      
+      480 |   0.1185 |  4.100925e+07 |   +0.78% |  4.58e-07 |      
+      490 |   0.1006 |  4.122884e+07 |   +0.54% |  6.74e-07 |      
+[INFO GPL-1001] Finished with Overflow: 0.099402
+[INFO GPL-1002] Placed Cell Area            25999.8238
+[INFO GPL-1003] Available Free Area         49124.6144
+[INFO GPL-1004] Minimum Feasible Density        0.5293 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.5881
+[INFO GPL-1008]     - For 80% usage of free space: 0.6616
+[INFO GPL-1009]     - For 50% usage of free space: 1.0585
+Took 6 seconds: global_placement -density 0.55 -pad_left 0 -pad_right 0 -routability_driven -timing_driven
+Report metrics stage 3, global place...
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 25950 u^2 52% utilization.
+Elapsed time: 0:06.93[h:]min:sec. CPU time: user 10.19 sys 4.98 (218%). Peak memory: 192048KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_4_place_resized resize
+Running resize.tcl, stage 3_4_place_resized
+Perform port buffering...
+[INFO RSZ-0027] Inserted 128 input buffers.
+[INFO RSZ-0028] Inserted 20 output buffers.
+Perform buffer insertion and gate resizing...
+repair_design -verbose -match_cell_footprint
+[INFO RSZ-0058] Using max wire length 2154um.
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3718
+       10 |     +0.0% |       0 |       0 |             0 |      3708
+       20 |     +0.0% |       0 |       0 |             0 |      3698
+       30 |     +0.0% |       0 |       0 |             0 |      3688
+       40 |     +0.0% |       0 |       0 |             0 |      3678
+       50 |     +0.0% |       0 |       0 |             0 |      3668
+       60 |     +0.0% |       1 |       0 |             0 |      3658
+       70 |     +0.0% |       2 |       0 |             0 |      3648
+       80 |     +0.0% |       3 |       0 |             0 |      3638
+       90 |     +0.0% |       3 |       0 |             0 |      3628
+      100 |     +0.0% |       3 |       0 |             0 |      3618
+      110 |     +0.0% |       3 |       0 |             0 |      3608
+      120 |     +0.0% |       3 |       0 |             0 |      3598
+      130 |     +0.0% |       4 |       0 |             0 |      3588
+      140 |     +0.0% |       4 |       0 |             0 |      3578
+      150 |     +0.0% |       4 |       0 |             0 |      3568
+      160 |     +0.0% |       4 |       0 |             0 |      3558
+      170 |     +0.0% |       4 |       0 |             0 |      3548
+      180 |     +0.0% |       4 |       0 |             0 |      3538
+      190 |     +0.0% |       4 |       0 |             0 |      3528
+      200 |     +0.0% |       5 |       0 |             0 |      3518
+      210 |     +0.0% |       5 |       0 |             0 |      3508
+      220 |     +0.0% |       5 |       0 |             0 |      3498
+      230 |     +0.0% |       5 |       0 |             0 |      3488
+      240 |     +0.0% |       7 |       0 |             0 |      3478
+      250 |     +0.0% |       8 |       0 |             0 |      3468
+      260 |     +0.0% |       8 |       0 |             0 |      3458
+      270 |     +0.0% |       8 |       0 |             0 |      3448
+      280 |     +0.1% |      10 |       0 |             0 |      3438
+      290 |     +0.1% |      10 |       0 |             0 |      3428
+      300 |     +0.1% |      10 |       0 |             0 |      3418
+      310 |     +0.1% |      10 |       0 |             0 |      3408
+      320 |     +0.1% |      10 |       0 |             0 |      3398
+      330 |     +0.1% |      10 |       0 |             0 |      3388
+      340 |     +0.1% |      11 |       0 |             0 |      3378
+      350 |     +0.1% |      11 |       0 |             0 |      3368
+      360 |     +0.1% |      11 |       0 |             0 |      3358
+      370 |     +0.1% |      11 |       0 |             0 |      3348
+      380 |     +0.1% |      11 |       0 |             0 |      3338
+      390 |     +0.2% |      13 |       0 |             0 |      3328
+      400 |     +0.2% |      21 |       0 |             0 |      3318
+      410 |     +0.2% |      31 |       0 |             0 |      3308
+      420 |     +0.2% |      41 |       0 |             0 |      3298
+      430 |     +0.1% |      48 |       0 |             0 |      3288
+      440 |     +0.1% |      48 |       0 |             0 |      3278
+      450 |     +0.1% |      48 |       0 |             0 |      3268
+      460 |     +0.1% |      48 |       0 |             0 |      3258
+      470 |     +0.1% |      48 |       0 |             0 |      3248
+      480 |     +0.1% |      48 |       0 |             0 |      3238
+      490 |     +0.1% |      48 |       0 |             0 |      3228
+      500 |     +0.1% |      48 |       0 |             0 |      3218
+      510 |     +0.1% |      48 |       0 |             0 |      3208
+      520 |     +0.1% |      48 |       0 |             0 |      3198
+      530 |     +0.1% |      48 |       0 |             0 |      3188
+      540 |     +0.1% |      48 |       0 |             0 |      3178
+      550 |     +0.2% |      50 |       0 |             0 |      3168
+      560 |     +0.1% |      57 |       0 |             0 |      3158
+      570 |     +0.1% |      61 |       0 |             0 |      3148
+      580 |     +0.1% |      64 |       0 |             0 |      3138
+      590 |     +0.2% |      69 |       0 |             0 |      3128
+      600 |     +0.1% |      76 |       0 |             0 |      3118
+      610 |     +0.2% |      81 |       0 |             0 |      3108
+      620 |     +0.2% |      85 |       0 |             0 |      3098
+      630 |     +0.2% |      93 |       0 |             0 |      3088
+      640 |     +0.1% |      98 |       0 |             0 |      3078
+      650 |     +0.1% |     101 |       0 |             0 |      3068
+      660 |     +0.2% |     105 |       0 |             0 |      3058
+      670 |     +0.2% |     109 |       0 |             0 |      3048
+      680 |     +0.2% |     109 |       0 |             0 |      3038
+      690 |     +0.2% |     109 |       0 |             0 |      3028
+      700 |     +0.2% |     109 |       0 |             0 |      3018
+      710 |     +0.2% |     109 |       0 |             0 |      3008
+      720 |     +0.2% |     109 |       0 |             0 |      2998
+      730 |     +0.2% |     110 |       0 |             0 |      2988
+      740 |     +0.2% |     110 |       0 |             0 |      2978
+      750 |     +0.2% |     114 |       0 |             0 |      2968
+      760 |     +0.2% |     121 |       0 |             0 |      2958
+      770 |     +0.2% |     126 |       0 |             0 |      2948
+      780 |     +0.2% |     130 |       0 |             0 |      2938
+      790 |     +0.1% |     133 |       0 |             0 |      2928
+      800 |     +0.1% |     134 |       0 |             0 |      2918
+      810 |     +0.1% |     134 |       0 |             0 |      2908
+      820 |     +0.1% |     134 |       0 |             0 |      2898
+      830 |     +0.1% |     134 |       0 |             0 |      2888
+      840 |     +0.1% |     134 |       0 |             0 |      2878
+      850 |     +0.1% |     134 |       0 |             0 |      2868
+      860 |     +0.1% |     134 |       0 |             0 |      2858
+      870 |     +0.1% |     134 |       0 |             0 |      2848
+      880 |     +0.1% |     134 |       0 |             0 |      2838
+      890 |     +0.1% |     134 |       0 |             0 |      2828
+      900 |     +0.1% |     134 |       0 |             0 |      2818
+      910 |     +0.1% |     134 |       0 |             0 |      2808
+      920 |     +0.1% |     134 |       0 |             0 |      2798
+      930 |     +0.1% |     134 |       0 |             0 |      2788
+      940 |     +0.1% |     134 |       0 |             0 |      2778
+      950 |     +0.1% |     135 |       0 |             0 |      2768
+      960 |     +0.1% |     137 |       0 |             0 |      2758
+      970 |     +0.1% |     139 |       0 |             0 |      2748
+      980 |     +0.1% |     141 |       0 |             0 |      2738
+      990 |     +0.1% |     141 |       0 |             0 |      2728
+     1000 |     +0.1% |     141 |       0 |             0 |      2718
+     1010 |     +0.1% |     141 |       0 |             0 |      2708
+     1020 |     +0.1% |     141 |       0 |             0 |      2698
+     1030 |     +0.1% |     141 |       0 |             0 |      2688
+     1040 |     +0.1% |     141 |       0 |             0 |      2678
+     1050 |     +0.1% |     141 |       0 |             0 |      2668
+     1060 |     +0.1% |     141 |       0 |             0 |      2658
+     1070 |     +0.1% |     141 |       0 |             0 |      2648
+     1080 |     +0.1% |     141 |       0 |             0 |      2638
+     1090 |     +0.1% |     141 |       0 |             0 |      2628
+     1100 |     +0.1% |     141 |       0 |             0 |      2618
+     1110 |     +0.1% |     142 |       0 |             0 |      2608
+     1120 |     +0.1% |     142 |       0 |             0 |      2598
+     1130 |     +0.1% |     142 |       0 |             0 |      2588
+     1140 |     +0.1% |     142 |       0 |             0 |      2578
+     1150 |     +0.1% |     142 |       0 |             0 |      2568
+     1160 |     +0.1% |     142 |       0 |             0 |      2558
+     1170 |     +0.1% |     142 |       0 |             0 |      2548
+     1180 |     +0.1% |     142 |       0 |             0 |      2538
+     1190 |     +0.1% |     142 |       0 |             0 |      2528
+     1200 |     +0.1% |     142 |       0 |             0 |      2518
+     1210 |     +0.1% |     142 |       0 |             0 |      2508
+     1220 |     +0.1% |     142 |       0 |             0 |      2498
+     1230 |     +0.1% |     142 |       0 |             0 |      2488
+     1240 |     +0.1% |     142 |       0 |             0 |      2478
+     1250 |     +0.1% |     142 |       0 |             0 |      2468
+     1260 |     +0.1% |     142 |       0 |             0 |      2458
+     1270 |     +0.1% |     142 |       0 |             0 |      2448
+     1280 |     +0.1% |     142 |       0 |             0 |      2438
+     1290 |     +0.1% |     142 |       0 |             0 |      2428
+     1300 |     +0.1% |     142 |       0 |             0 |      2418
+     1310 |     +0.1% |     142 |       0 |             0 |      2408
+     1320 |     +0.1% |     142 |       0 |             0 |      2398
+     1330 |     +0.1% |     142 |       0 |             0 |      2388
+     1340 |     +0.1% |     142 |       0 |             0 |      2378
+     1350 |     +0.1% |     142 |       0 |             0 |      2368
+     1360 |     +0.1% |     143 |       0 |             0 |      2358
+     1370 |     +0.1% |     143 |       0 |             0 |      2348
+     1380 |     +0.1% |     143 |       0 |             0 |      2338
+     1390 |     +0.1% |     143 |       0 |             0 |      2328
+     1400 |     +0.1% |     149 |       0 |             0 |      2318
+     1410 |     +0.1% |     149 |       0 |             0 |      2308
+     1420 |     +0.1% |     149 |       0 |             0 |      2298
+     1430 |     +0.1% |     149 |       0 |             0 |      2288
+     1440 |     +0.1% |     151 |       0 |             0 |      2278
+     1450 |     +0.1% |     153 |       0 |             0 |      2268
+     1460 |     +0.1% |     153 |       0 |             0 |      2258
+     1470 |     +0.1% |     153 |       0 |             0 |      2248
+     1480 |     +0.1% |     153 |       0 |             0 |      2238
+     1490 |     +0.1% |     153 |       0 |             0 |      2228
+     1500 |     +0.1% |     153 |       0 |             0 |      2218
+     1510 |     +0.1% |     153 |       0 |             0 |      2208
+     1520 |     +0.1% |     155 |       0 |             0 |      2198
+     1530 |     +0.1% |     155 |       0 |             0 |      2188
+     1540 |     +0.1% |     156 |       0 |             0 |      2178
+     1550 |     +0.1% |     156 |       0 |             0 |      2168
+     1560 |     +0.1% |     156 |       0 |             0 |      2158
+     1570 |     +0.1% |     156 |       0 |             0 |      2148
+     1580 |     +0.1% |     157 |       0 |             0 |      2138
+     1590 |     +0.1% |     157 |       0 |             0 |      2128
+     1600 |     +0.1% |     157 |       0 |             0 |      2118
+     1610 |     +0.1% |     158 |       0 |             0 |      2108
+     1620 |     +0.1% |     158 |       0 |             0 |      2098
+     1630 |     +0.1% |     159 |       0 |             0 |      2088
+     1640 |     +0.1% |     160 |       0 |             0 |      2078
+     1650 |     +0.1% |     161 |       0 |             0 |      2068
+     1660 |     +0.1% |     161 |       0 |             0 |      2058
+     1670 |     +0.1% |     161 |       0 |             0 |      2048
+     1680 |     +0.1% |     161 |       0 |             0 |      2038
+     1690 |     +0.1% |     161 |       0 |             0 |      2028
+     1700 |     +0.1% |     161 |       0 |             0 |      2018
+     1710 |     +0.1% |     161 |       0 |             0 |      2008
+     1720 |     +0.1% |     161 |       0 |             0 |      1998
+     1730 |     +0.1% |     161 |       0 |             0 |      1988
+     1740 |     +0.1% |     161 |       0 |             0 |      1978
+     1750 |     +0.1% |     161 |       0 |             0 |      1968
+     1760 |     +0.1% |     161 |       0 |             0 |      1958
+     1770 |     +0.1% |     161 |       0 |             0 |      1948
+     1780 |     +0.1% |     161 |       0 |             0 |      1938
+     1790 |     +0.1% |     161 |       0 |             0 |      1928
+     1800 |     +0.1% |     161 |       0 |             0 |      1918
+     1810 |     +0.1% |     161 |       0 |             0 |      1908
+     1820 |     +0.1% |     161 |       0 |             0 |      1898
+     1830 |     +0.1% |     161 |       0 |             0 |      1888
+     1840 |     +0.1% |     161 |       0 |             0 |      1878
+     1850 |     +0.1% |     161 |       0 |             0 |      1868
+     1860 |     +0.1% |     161 |       0 |             0 |      1858
+     1870 |     +0.1% |     161 |       0 |             0 |      1848
+     1880 |     +0.1% |     161 |       0 |             0 |      1838
+     1890 |     +0.1% |     161 |       0 |             0 |      1828
+     1900 |     +0.1% |     161 |       0 |             0 |      1818
+     1910 |     +0.1% |     161 |       0 |             0 |      1808
+     1920 |     +0.1% |     161 |       0 |             0 |      1798
+     1930 |     +0.1% |     161 |       0 |             0 |      1788
+     1940 |     +0.1% |     161 |       0 |             0 |      1778
+     1950 |     +0.1% |     161 |       0 |             0 |      1768
+     1960 |     +0.1% |     161 |       0 |             0 |      1758
+     1970 |     +0.1% |     164 |       0 |             0 |      1748
+     1980 |     +0.1% |     164 |       0 |             0 |      1738
+     1990 |     +0.1% |     165 |       0 |             0 |      1728
+     2000 |     +0.1% |     165 |       0 |             0 |      1718
+     2010 |     +0.1% |     165 |       0 |             0 |      1708
+     2020 |     +0.2% |     166 |       0 |             0 |      1698
+     2030 |     +0.2% |     166 |       0 |             0 |      1688
+     2040 |     +0.2% |     166 |       0 |             0 |      1678
+     2050 |     +0.2% |     166 |       0 |             0 |      1668
+     2060 |     +0.2% |     168 |       0 |             0 |      1658
+     2070 |     +0.2% |     168 |       0 |             0 |      1648
+     2080 |     +0.2% |     168 |       0 |             0 |      1638
+     2090 |     +0.2% |     168 |       0 |             0 |      1628
+     2100 |     +0.2% |     168 |       0 |             0 |      1618
+     2110 |     +0.2% |     170 |       0 |             0 |      1608
+     2120 |     +0.2% |     170 |       0 |             0 |      1598
+     2130 |     +0.2% |     173 |       0 |             0 |      1588
+     2140 |     +0.2% |     173 |       0 |             0 |      1578
+     2150 |     +0.2% |     173 |       0 |             0 |      1568
+     2160 |     +0.2% |     173 |       0 |             0 |      1558
+     2170 |     +0.2% |     173 |       0 |             0 |      1548
+     2180 |     +0.2% |     173 |       0 |             0 |      1538
+     2190 |     +0.2% |     173 |       0 |             0 |      1528
+     2200 |     +0.2% |     173 |       0 |             0 |      1518
+     2210 |     +0.2% |     173 |       0 |             0 |      1508
+     2220 |     +0.1% |     175 |       0 |             0 |      1498
+     2230 |     +0.1% |     181 |       0 |             0 |      1488
+     2240 |     +0.1% |     185 |       0 |             0 |      1478
+     2250 |     +0.1% |     185 |       0 |             0 |      1468
+     2260 |     +0.1% |     185 |       0 |             0 |      1458
+     2270 |     +0.1% |     185 |       0 |             0 |      1448
+     2280 |     +0.1% |     185 |       0 |             0 |      1438
+     2290 |     +0.1% |     186 |       0 |             0 |      1428
+     2300 |     +0.1% |     186 |       0 |             0 |      1418
+     2310 |     +0.1% |     186 |       0 |             0 |      1408
+     2320 |     +0.1% |     187 |       0 |             0 |      1398
+     2330 |     +0.2% |     188 |       0 |             0 |      1388
+     2340 |     +0.2% |     188 |       0 |             0 |      1378
+     2350 |     +0.2% |     188 |       0 |             0 |      1368
+     2360 |     +0.2% |     191 |       0 |             0 |      1358
+     2370 |     +0.2% |     191 |       0 |             0 |      1348
+     2380 |     +0.2% |     193 |       0 |             0 |      1338
+     2390 |     +0.2% |     193 |       0 |             0 |      1328
+     2400 |     +0.2% |     193 |       0 |             0 |      1318
+     2410 |     +0.2% |     193 |       0 |             0 |      1308
+     2420 |     +0.2% |     195 |       0 |             0 |      1298
+     2430 |     +0.2% |     197 |       0 |             0 |      1288
+     2440 |     +0.2% |     199 |       0 |             0 |      1278
+     2450 |     +0.2% |     199 |       0 |             0 |      1268
+     2460 |     +0.2% |     199 |       0 |             0 |      1258
+     2470 |     +0.2% |     199 |       0 |             0 |      1248
+     2480 |     +0.2% |     199 |       0 |             0 |      1238
+     2490 |     +0.2% |     199 |       0 |             0 |      1228
+     2500 |     +0.2% |     199 |       0 |             0 |      1218
+     2510 |     +0.2% |     199 |       0 |             0 |      1208
+     2520 |     +0.2% |     199 |       0 |             0 |      1198
+     2530 |     +0.2% |     199 |       0 |             0 |      1188
+     2540 |     +0.2% |     199 |       0 |             0 |      1178
+     2550 |     +0.2% |     199 |       0 |             0 |      1168
+     2560 |     +0.2% |     199 |       0 |             0 |      1158
+     2570 |     +0.2% |     199 |       0 |             0 |      1148
+     2580 |     +0.2% |     199 |       0 |             0 |      1138
+     2590 |     +0.2% |     199 |       0 |             0 |      1128
+     2600 |     +0.2% |     199 |       0 |             0 |      1118
+     2610 |     +0.2% |     199 |       0 |             0 |      1108
+     2620 |     +0.2% |     199 |       0 |             0 |      1098
+     2630 |     +0.2% |     199 |       0 |             0 |      1088
+     2640 |     +0.2% |     199 |       0 |             0 |      1078
+     2650 |     +0.2% |     199 |       0 |             0 |      1068
+     2660 |     +0.2% |     199 |       0 |             0 |      1058
+     2670 |     +0.2% |     199 |       0 |             0 |      1048
+     2680 |     +0.2% |     199 |       0 |             0 |      1038
+     2690 |     +0.2% |     199 |       0 |             0 |      1028
+     2700 |     +0.2% |     199 |       0 |             0 |      1018
+     2710 |     +0.2% |     199 |       0 |             0 |      1008
+     2720 |     +0.2% |     199 |       0 |             0 |       998
+     2730 |     +0.2% |     206 |       0 |             0 |       988
+     2740 |     +0.2% |     206 |       0 |             0 |       978
+     2750 |     +0.2% |     212 |       0 |             0 |       968
+     2760 |     +0.2% |     214 |       0 |             0 |       958
+     2770 |     +0.2% |     217 |       0 |             0 |       948
+     2780 |     +0.2% |     217 |       0 |             0 |       938
+     2790 |     +0.2% |     217 |       0 |             0 |       928
+     2800 |     +0.2% |     217 |       0 |             0 |       918
+     2810 |     +0.2% |     217 |       0 |             0 |       908
+     2820 |     +0.2% |     217 |       0 |             0 |       898
+     2830 |     +0.2% |     217 |       0 |             0 |       888
+     2840 |     +0.2% |     217 |       0 |             0 |       878
+     2850 |     +0.2% |     217 |       0 |             0 |       868
+     2860 |     +0.2% |     220 |       0 |             0 |       858
+     2870 |     +0.2% |     220 |       0 |             0 |       848
+     2880 |     +0.2% |     221 |       0 |             0 |       838
+     2890 |     +0.2% |     223 |       0 |             0 |       828
+     2900 |     +0.2% |     227 |       0 |             0 |       818
+     2910 |     +0.2% |     237 |       0 |             0 |       808
+     2920 |     +0.2% |     243 |       0 |             0 |       798
+     2930 |     +0.2% |     244 |       0 |             0 |       788
+     2940 |     +0.2% |     249 |       0 |             0 |       778
+     2950 |     +0.2% |     251 |       0 |             0 |       768
+     2960 |     +0.2% |     256 |       0 |             0 |       758
+     2970 |     +0.2% |     259 |       0 |             0 |       748
+     2980 |     +0.2% |     265 |       0 |             0 |       738
+     2990 |     +0.2% |     271 |       0 |             0 |       728
+     3000 |     +0.2% |     281 |       0 |             0 |       718
+     3010 |     +0.2% |     285 |       0 |             0 |       708
+     3020 |     +0.2% |     286 |       0 |             0 |       698
+     3030 |     +0.2% |     286 |       0 |             0 |       688
+     3040 |     +0.2% |     286 |       0 |             0 |       678
+     3050 |     +0.2% |     286 |       0 |             0 |       668
+     3060 |     +0.2% |     286 |       0 |             0 |       658
+     3070 |     +0.2% |     286 |       0 |             0 |       648
+     3080 |     +0.2% |     286 |       0 |             0 |       638
+     3090 |     +0.2% |     288 |       0 |             0 |       628
+     3100 |     +0.2% |     289 |       0 |             0 |       618
+     3110 |     +0.2% |     290 |       0 |             0 |       608
+     3120 |     +0.2% |     290 |       0 |             0 |       598
+     3130 |     +0.2% |     290 |       0 |             0 |       588
+     3140 |     +0.2% |     292 |       0 |             0 |       578
+     3150 |     +0.2% |     294 |       0 |             0 |       568
+     3160 |     +0.2% |     294 |       0 |             0 |       558
+     3170 |     +0.2% |     294 |       0 |             0 |       548
+     3180 |     +0.2% |     295 |       0 |             0 |       538
+     3190 |     +0.2% |     298 |       0 |             0 |       528
+     3200 |     +0.2% |     299 |       0 |             0 |       518
+     3210 |     +0.2% |     299 |       0 |             0 |       508
+     3220 |     +0.2% |     300 |       0 |             0 |       498
+     3230 |     +0.2% |     301 |       0 |             0 |       488
+     3240 |     +0.2% |     302 |       0 |             0 |       478
+     3250 |     +0.2% |     304 |       0 |             0 |       468
+     3260 |     +0.2% |     304 |       0 |             0 |       458
+     3270 |     +0.2% |     304 |       0 |             0 |       448
+     3280 |     +0.2% |     305 |       0 |             0 |       438
+     3290 |     +0.2% |     307 |       0 |             0 |       428
+     3300 |     +0.2% |     308 |       0 |             0 |       418
+     3310 |     +0.2% |     308 |       0 |             0 |       408
+     3320 |     +0.2% |     308 |       0 |             0 |       398
+     3330 |     +0.2% |     310 |       0 |             0 |       388
+     3340 |     +0.2% |     311 |       0 |             0 |       378
+     3350 |     +0.2% |     311 |       0 |             0 |       368
+     3360 |     +0.2% |     311 |       0 |             0 |       358
+     3370 |     +0.2% |     311 |       0 |             0 |       348
+     3380 |     +0.2% |     313 |       0 |             0 |       338
+     3390 |     +0.2% |     314 |       0 |             0 |       328
+     3400 |     +0.2% |     315 |       0 |             0 |       318
+     3410 |     +0.2% |     315 |       0 |             0 |       308
+     3420 |     +0.2% |     316 |       0 |             0 |       298
+     3430 |     +0.1% |     319 |       0 |             0 |       288
+     3440 |     +0.1% |     321 |       0 |             0 |       278
+     3450 |     +0.1% |     321 |       0 |             0 |       268
+     3460 |     +0.1% |     321 |       0 |             0 |       258
+     3470 |     +0.1% |     330 |       0 |             0 |       248
+     3480 |     +0.1% |     339 |       0 |             0 |       238
+     3490 |     +0.1% |     348 |       0 |             0 |       228
+     3500 |     +0.1% |     358 |       0 |             0 |       218
+     3510 |     +0.1% |     368 |       0 |             0 |       208
+     3520 |     +0.1% |     378 |       0 |             0 |       198
+     3530 |     +0.1% |     388 |       0 |             0 |       188
+     3540 |     +0.1% |     398 |       0 |             0 |       178
+     3550 |     +0.1% |     408 |       0 |             0 |       168
+     3560 |     +0.1% |     418 |       0 |             0 |       158
+     3570 |     +0.1% |     427 |       0 |             0 |       148
+     3580 |     +0.1% |     437 |       0 |             0 |       138
+     3590 |     +0.1% |     445 |       0 |             0 |       128
+     3600 |     +0.1% |     445 |       0 |             0 |       118
+     3610 |     +0.1% |     445 |       0 |             0 |       108
+     3620 |     +0.1% |     445 |       0 |             0 |        98
+     3630 |     +0.1% |     445 |       0 |             0 |        88
+     3640 |     +0.1% |     445 |       0 |             0 |        78
+     3650 |     +0.1% |     445 |       0 |             0 |        68
+     3660 |     +0.1% |     445 |       0 |             0 |        58
+     3670 |     +0.1% |     445 |       0 |             0 |        48
+     3680 |     +0.1% |     445 |       0 |             0 |        38
+     3690 |     +0.1% |     445 |       0 |             0 |        28
+     3700 |     +0.1% |     445 |       0 |             0 |        18
+     3710 |     +0.1% |     445 |       0 |             0 |         8
+    final |     +0.1% |     445 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0039] Resized 445 instances.
+Repair tie lo fanout...
+Repair tie hi fanout...
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 26540 u^2 53% utilization.
+Instance count before 3336, after 3484
+Pin count before 8914, after 9210
+Elapsed time: 0:02.25[h:]min:sec. CPU time: user 1.15 sys 1.77 (129%). Peak memory: 134420KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 3_5_place_dp detail_place
+Running detail_place.tcl, stage 3_5_place_dp
+Placement Analysis
+---------------------------------
+total displacement       5956.9 u
+average displacement        1.7 u
+max displacement            6.9 u
+original HPWL           45773.1 u
+legalized HPWL          50736.6 u
+delta HPWL                   11 %
+
+Detailed placement improvement.
+[INFO DPL-0401] Setting random seed to 1.
+[INFO DPL-0402] Setting maximum displacement 5 1 to 13600 2720 units.
+[INFO DPL-0320] Collected 822 fixed cells.
+[INFO DPL-0318] Collected 2812 single height cells.
+[INFO DPL-0321] Collected 0 wide cells.
+[INFO DPL-0322] Image (1380, 2720) - (225400, 225760)
+[INFO DPL-0310] Assigned 2812 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPL-0303] Running algorithm for independent set matching.
+[INFO DPL-0300] Set matching objective is wirelength.
+[INFO DPL-0301] Pass   1 of matching; objective is 5.072310e+07.
+[INFO DPL-0302] End of matching; objective is 5.059168e+07, improvement is 0.26 percent.
+[INFO DPL-0303] Running algorithm for global swaps.
+[INFO DPL-0306] Pass   1 of global swaps; hpwl is 4.968386e+07.
+[INFO DPL-0306] Pass   2 of global swaps; hpwl is 4.954996e+07.
+[INFO DPL-0307] End of global swaps; objective is 4.954996e+07, improvement is 2.06 percent.
+[INFO DPL-0303] Running algorithm for vertical swaps.
+[INFO DPL-0308] Pass   1 of vertical swaps; hpwl is 4.931663e+07.
+[INFO DPL-0309] End of vertical swaps; objective is 4.931663e+07, improvement is 0.47 percent.
+[INFO DPL-0303] Running algorithm for reordering.
+[INFO DPL-0304] Pass   1 of reordering; objective is 4.919787e+07.
+[INFO DPL-0305] End of reordering; objective is 4.919787e+07, improvement is 0.24 percent.
+[INFO DPL-0303] Running algorithm for random improvement.
+[INFO DPL-0324] Random improver is using displacement generator.
+[INFO DPL-0325] Random improver is using hpwl objective.
+[INFO DPL-0326] Random improver cost string is (a).
+[INFO DPL-0332] End of pass, Generator displacement called 56240 times.
+[INFO DPL-0335] Generator displacement, Cumulative attempts 56240, swaps 9194, moves 14290 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 4.889268e+07, Scratch cost 4.831045e+07, Incremental cost 4.831045e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 4.831045e+07.
+[INFO DPL-0327] Pass   1 of random improver; improvement in cost is 1.19 percent.
+[INFO DPL-0332] End of pass, Generator displacement called 56240 times.
+[INFO DPL-0335] Generator displacement, Cumulative attempts 112480, swaps 17597, moves 29107 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 4.831045e+07, Scratch cost 4.809170e+07, Incremental cost 4.809170e+07, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 4.809170e+07.
+[INFO DPL-0327] Pass   2 of random improver; improvement in cost is 0.45 percent.
+[INFO DPL-0328] End of random improver; improvement is 1.638233 percent.
+[INFO DPL-0380] Cell flipping.
+[INFO DPL-0382] Changed 0 cell orientations for row compatibility.
+[INFO DPL-0383] Performed 907 cell flips.
+[INFO DPL-0384] End of flipping; objective is 4.703610e+07, improvement is 2.81 percent.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+Detailed Improvement Results
+------------------------------------------
+Original HPWL            50736.6 u (   24690.4,    26046.2)
+Final HPWL               47060.4 u (   22630.7,    24429.7)
+Delta HPWL                  -7.2 % (      -8.3,       -6.2)
+
+[INFO DPL-0020] Mirrored 185 instances
+[INFO DPL-0021] HPWL before           47060.4 u
+[INFO DPL-0022] HPWL after            47030.6 u
+[INFO DPL-0023] HPWL delta               -0.1 %
+[INFO FLW-0012] Placement violations .
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 26540 u^2 53% utilization.
+Elapsed time: 0:02.05[h:]min:sec. CPU time: user 1.24 sys 1.22 (120%). Peak memory: 131760KB.
+cp ./results/sky130hd/dot_product/base/3_5_place_dp.odb ./results/sky130hd/dot_product/base/3_place.odb
+cp ./results/sky130hd/dot_product/base/2_floorplan.sdc ./results/sky130hd/dot_product/base/3_place.sdc
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 4_1_cts cts
+Running cts.tcl, stage 4_1_cts
+clock_tree_synthesis -sink_clustering_enable -balance_levels -sink_clustering_size 50 -sink_clustering_max_diameter 20
+[INFO CTS-0050] Root buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0051] Sink buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sky130_fd_sc_hd__clkbuf_16
+[INFO CTS-0049] Characterization buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0007] Net "clk" found for clock "clk".
+[INFO CTS-0010]  Clock net "clk" has 148 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 1 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 148.
+[INFO CTS-0029]  Register sinks will be clustered in groups of up to 50 and with maximum cluster diameter of 20.0 um.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0023]  Original sink region: [(60065, 42100), (180515, 178100)].
+[INFO CTS-0024]  Normalized sink region: [(4.41654, 3.09559), (13.2732, 13.0956)].
+[INFO CTS-0025]     Width:  8.8566.
+[INFO CTS-0026]     Height: 10.0000.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 74
+    Sub-region size: 8.8566 X 5.0000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 37
+    Sub-region size: 4.4283 X 5.0000
+[INFO CTS-0034]     Segment length (rounded): 2.
+ Level 3
+    Direction: Vertical
+    Sinks per sub-region: 19
+    Sub-region size: 4.4283 X 2.5000
+[INFO CTS-0034]     Segment length (rounded): 1.
+ Level 4
+    Direction: Horizontal
+    Sinks per sub-region: 10
+    Sub-region size: 2.2142 X 2.5000
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 148.
+[INFO CTS-0018]     Created 17 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 17 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 6:1, 8:6, 9:3, 10:3, 12:2, 13:1..
+[INFO CTS-0017]     Max level of the clock tree: 4.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 163
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 243.73 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Leaf load cells 15
+[INFO RSZ-0058] Using max wire length 2154um.
+Placement Analysis
+---------------------------------
+total displacement        322.5 u
+average displacement        0.1 u
+max displacement            7.3 u
+original HPWL           47836.0 u
+legalized HPWL          49421.7 u
+delta HPWL                    3 %
+
+repair_timing -verbose -setup_margin 0 -hold_margin 0 -repair_tns 100 -match_cell_footprint
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0094] Found 5 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 5 out of 5 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   TNS      |  Viol  | Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpt
+--------------------------------------------------------------------------------------------------------------
+        0 |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.184 |       -0.5 |      5 | dot_out\[16\]$_SDFF_PP0_/D
+       10 |       0 |       4 |        0 |      0 |     5 |    +0.1% |   -0.005 |       -0.0 |      4 | dot_out\[18\]$_SDFF_PP0_/D
+       10 |       0 |       4 |        0 |      0 |     5 |    +0.1% |   -0.005 |       -0.0 |      3 | dot_out\[18\]$_SDFF_PP0_/D
+       12 |       0 |       4 |        1 |      0 |     5 |    +0.1% |    0.006 |        0.0 |      1 | dot_out\[18\]$_SDFF_PP0_/D
+       13 |       0 |       4 |        1 |      0 |     5 |    +0.1% |    0.006 |        0.0 |      0 | dot_out\[18\]$_SDFF_PP0_/D
+       14 |       0 |       4 |        1 |      0 |     5 |    +0.1% |    0.006 |        0.0 |      0 | dot_out\[18\]$_SDFF_PP0_/D
+       15 |       0 |       4 |        1 |      0 |     5 |    +0.1% |    0.006 |        0.0 |      0 | dot_out\[18\]$_SDFF_PP0_/D
+    final |       0 |       4 |        1 |      0 |     5 |    +0.1% |    0.006 |        0.0 |      0 | dot_out\[18\]$_SDFF_PP0_/D
+--------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0040] Inserted 1 buffers.
+[INFO RSZ-0051] Resized 4 instances, 4 sized up, 0 sized down.
+[INFO RSZ-0043] Swapped pins on 5 instances.
+[INFO RSZ-0046] Found 4 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.042 |  -0.075 | products_flat\[96\]$_SDFF_PP0_/D
+    final |       0 |       6 |            0 |    +0.2% |   0.002 |   0.000 | products_flat\[0\]$_SDFF_PP0_/D
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 6 hold buffers.
+Placement Analysis
+---------------------------------
+total displacement         48.0 u
+average displacement        0.0 u
+max displacement            5.4 u
+original HPWL           49488.2 u
+legalized HPWL          49535.9 u
+delta HPWL                    0 %
+
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 27216 u^2 54% utilization.
+Elapsed time: 0:03.48[h:]min:sec. CPU time: user 1.76 sys 2.52 (123%). Peak memory: 146644KB.
+cp ./results/sky130hd/dot_product/base/4_1_cts.odb ./results/sky130hd/dot_product/base/4_cts.odb
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_1_grt global_route
+Running global_route.tcl, stage 5_1_grt
+[INFO DRT-0149] Reading tech and libs.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+
+Units:                1000
+Number of layers:     13
+Number of macros:     441
+Number of vias:       29
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+
+Design:                   dot_product
+Die area:                 ( 0 0 ) ( 226820 226820 )
+Number of track patterns: 12
+Number of DEF vias:       0
+Number of components:     3523
+Number of terminals:      150
+Number of snets:          2
+Number of nets:           3742
+
+[INFO DRT-0167] List of default vias:
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 118.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete FR_MASTERSLICE.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete li1.
+[INFO DRT-0024]   Complete mcon.
+[INFO DRT-0024]   Complete met1.
+[INFO DRT-0024]   Complete via.
+[INFO DRT-0024]   Complete met2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete met3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete met4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete met5.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 84499.
+[INFO DRT-0033] mcon shape region query size = 50454.
+[INFO DRT-0033] met1 shape region query size = 18936.
+[INFO DRT-0033] via shape region query size = 3320.
+[INFO DRT-0033] met2 shape region query size = 2071.
+[INFO DRT-0033] via2 shape region query size = 2656.
+[INFO DRT-0033] met3 shape region query size = 2063.
+[INFO DRT-0033] via3 shape region query size = 2656.
+[INFO DRT-0033] met4 shape region query size = 808.
+[INFO DRT-0033] via4 shape region query size = 128.
+[INFO DRT-0033] met5 shape region query size = 144.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 879 pins.
+[INFO DRT-0079]   Complete 100 unique inst patterns.
+[INFO DRT-0081]   Complete 118 unique inst patterns.
+[INFO DRT-0084]   Complete 1817 groups.
+#scanned instances     = 3523
+#unique  instances     = 118
+#stdCellGenAp          = 3677
+#stdCellValidPlanarAp  = 26
+#stdCellValidViaAp     = 2450
+#stdCellPinNoAp        = 6
+#stdCellPinCnt         = 9273
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:01:07, elapsed time = 00:00:10, memory = 131.66 (MB), peak = 131.66 (MB)
+global_route -congestion_report_file ./reports/sky130hd/dot_product/base/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 4697
+[INFO GRT-0019] Found 18 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 17
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal      21056          8976          57.37%
+met2       Vertical        15776         10137          35.74%
+met3       Horizontal      10528          7515          28.62%
+met4       Vertical         6400          3689          42.36%
+met5       Horizontal       2080           996          52.12%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 13821
+[INFO GRT-0198] Via related Steiner nodes: 114
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 16884
+[INFO GRT-0112] Final usage 3D: 58376
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              8976          3480           38.77%             0 /  0 /  0
+met2             10137          3708           36.58%             0 /  0 /  0
+met3              7515           411            5.47%             0 /  0 /  0
+met4              3689           125            3.39%             0 /  0 /  0
+met5               996             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            31313          7724           24.67%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 89775 um
+[INFO GRT-0014] Routed nets: 3726
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+[INFO RSZ-0058] Using max wire length 2154um.
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3757
+       10 |     +0.0% |       0 |       0 |             0 |      3747
+       20 |     +0.0% |       0 |       0 |             0 |      3737
+       30 |     +0.0% |       0 |       0 |             0 |      3727
+       40 |     +0.0% |       0 |       0 |             0 |      3717
+       50 |     +0.0% |       0 |       0 |             0 |      3707
+       60 |     +0.0% |       0 |       0 |             0 |      3697
+       70 |     +0.0% |       0 |       0 |             0 |      3687
+       80 |     +0.0% |       0 |       0 |             0 |      3677
+       90 |     +0.0% |       0 |       0 |             0 |      3667
+      100 |     +0.0% |       0 |       0 |             0 |      3657
+      110 |     +0.0% |       0 |       0 |             0 |      3647
+      120 |     +0.0% |       0 |       0 |             0 |      3637
+      130 |     +0.0% |       0 |       0 |             0 |      3627
+      140 |     +0.0% |       0 |       0 |             0 |      3617
+      150 |     +0.0% |       0 |       0 |             0 |      3607
+      160 |     +0.0% |       0 |       0 |             0 |      3597
+      170 |     +0.0% |       0 |       0 |             0 |      3587
+      180 |     +0.0% |       0 |       0 |             0 |      3577
+      190 |     +0.0% |       0 |       0 |             0 |      3567
+      200 |     +0.0% |       0 |       0 |             0 |      3557
+      210 |     +0.0% |       0 |       0 |             0 |      3547
+      220 |     +0.0% |       0 |       0 |             0 |      3537
+      230 |     +0.0% |       0 |       0 |             0 |      3527
+      240 |     +0.0% |       0 |       0 |             0 |      3517
+      250 |     +0.0% |       0 |       0 |             0 |      3507
+      260 |     +0.0% |       0 |       0 |             0 |      3497
+      270 |     +0.0% |       0 |       0 |             0 |      3487
+      280 |     +0.0% |       0 |       0 |             0 |      3477
+      290 |     +0.0% |       0 |       0 |             0 |      3467
+      300 |     +0.0% |       0 |       0 |             0 |      3457
+      310 |     +0.0% |       0 |       0 |             0 |      3447
+      320 |     +0.0% |       0 |       0 |             0 |      3437
+      330 |     +0.0% |       0 |       0 |             0 |      3427
+      340 |     +0.0% |       0 |       0 |             0 |      3417
+      350 |     +0.0% |       0 |       0 |             0 |      3407
+      360 |     +0.0% |       0 |       0 |             0 |      3397
+      370 |     +0.0% |       0 |       0 |             0 |      3387
+      380 |     +0.0% |       0 |       0 |             0 |      3377
+      390 |     +0.0% |       0 |       0 |             0 |      3367
+      400 |     +0.0% |       0 |       0 |             0 |      3357
+      410 |     +0.0% |       0 |       0 |             0 |      3347
+      420 |     +0.0% |       0 |       0 |             0 |      3337
+      430 |     +0.0% |       0 |       0 |             0 |      3327
+      440 |     +0.0% |       0 |       0 |             0 |      3317
+      450 |     +0.0% |       0 |       0 |             0 |      3307
+      460 |     +0.0% |       0 |       0 |             0 |      3297
+      470 |     +0.0% |       0 |       0 |             0 |      3287
+      480 |     +0.0% |       0 |       0 |             0 |      3277
+      490 |     +0.0% |       0 |       0 |             0 |      3267
+      500 |     +0.0% |       0 |       0 |             0 |      3257
+      510 |     +0.0% |       0 |       0 |             0 |      3247
+      520 |     +0.0% |       0 |       0 |             0 |      3237
+      530 |     +0.0% |       0 |       0 |             0 |      3227
+      540 |     +0.0% |       0 |       0 |             0 |      3217
+      550 |     +0.0% |       0 |       0 |             0 |      3207
+      560 |     +0.0% |       0 |       0 |             0 |      3197
+      570 |     +0.0% |       0 |       0 |             0 |      3187
+      580 |     +0.0% |       0 |       0 |             0 |      3177
+      590 |     +0.0% |       0 |       0 |             0 |      3167
+      600 |     +0.0% |       0 |       0 |             0 |      3157
+      610 |     +0.0% |       0 |       0 |             0 |      3147
+      620 |     +0.0% |       0 |       0 |             0 |      3137
+      630 |     +0.0% |       0 |       0 |             0 |      3127
+      640 |     +0.0% |       0 |       0 |             0 |      3117
+      650 |     +0.0% |       0 |       0 |             0 |      3107
+      660 |     +0.0% |       0 |       0 |             0 |      3097
+      670 |     +0.0% |       0 |       0 |             0 |      3087
+      680 |     +0.0% |       0 |       0 |             0 |      3077
+      690 |     +0.0% |       0 |       0 |             0 |      3067
+      700 |     +0.0% |       0 |       0 |             0 |      3057
+      710 |     +0.0% |       0 |       0 |             0 |      3047
+      720 |     +0.0% |       0 |       0 |             0 |      3037
+      730 |     +0.0% |       0 |       0 |             0 |      3027
+      740 |     +0.0% |       0 |       0 |             0 |      3017
+      750 |     +0.0% |       0 |       0 |             0 |      3007
+      760 |     +0.0% |       0 |       0 |             0 |      2997
+      770 |     +0.0% |       0 |       0 |             0 |      2987
+      780 |     +0.0% |       0 |       0 |             0 |      2977
+      790 |     +0.0% |       0 |       0 |             0 |      2967
+      800 |     +0.0% |       0 |       0 |             0 |      2957
+      810 |     +0.0% |       0 |       0 |             0 |      2947
+      820 |     +0.0% |       0 |       0 |             0 |      2937
+      830 |     +0.0% |       0 |       0 |             0 |      2927
+      840 |     +0.0% |       0 |       0 |             0 |      2917
+      850 |     +0.0% |       0 |       0 |             0 |      2907
+      860 |     +0.0% |       0 |       0 |             0 |      2897
+      870 |     +0.0% |       0 |       0 |             0 |      2887
+      880 |     +0.0% |       0 |       0 |             0 |      2877
+      890 |     +0.0% |       0 |       0 |             0 |      2867
+      900 |     +0.0% |       0 |       0 |             0 |      2857
+      910 |     +0.0% |       0 |       0 |             0 |      2847
+      920 |     +0.0% |       0 |       0 |             0 |      2837
+      930 |     +0.0% |       0 |       0 |             0 |      2827
+      940 |     +0.0% |       0 |       0 |             0 |      2817
+      950 |     +0.0% |       0 |       0 |             0 |      2807
+      960 |     +0.0% |       0 |       0 |             0 |      2797
+      970 |     +0.0% |       0 |       0 |             0 |      2787
+      980 |     +0.0% |       0 |       0 |             0 |      2777
+      990 |     +0.0% |       0 |       0 |             0 |      2767
+     1000 |     +0.0% |       0 |       0 |             0 |      2757
+     1010 |     +0.0% |       0 |       0 |             0 |      2747
+     1020 |     +0.0% |       0 |       0 |             0 |      2737
+     1030 |     +0.0% |       0 |       0 |             0 |      2727
+     1040 |     +0.0% |       0 |       0 |             0 |      2717
+     1050 |     +0.0% |       0 |       0 |             0 |      2707
+     1060 |     +0.0% |       0 |       0 |             0 |      2697
+     1070 |     +0.0% |       0 |       0 |             0 |      2687
+     1080 |     +0.0% |       0 |       0 |             0 |      2677
+     1090 |     +0.0% |       0 |       0 |             0 |      2667
+     1100 |     +0.0% |       0 |       0 |             0 |      2657
+     1110 |     +0.0% |       0 |       0 |             0 |      2647
+     1120 |     +0.0% |       0 |       0 |             0 |      2637
+     1130 |     +0.0% |       0 |       0 |             0 |      2627
+     1140 |     +0.0% |       0 |       0 |             0 |      2617
+     1150 |     +0.0% |       0 |       0 |             0 |      2607
+     1160 |     +0.0% |       0 |       0 |             0 |      2597
+     1170 |     +0.0% |       0 |       0 |             0 |      2587
+     1180 |     +0.0% |       0 |       0 |             0 |      2577
+     1190 |     +0.0% |       0 |       0 |             0 |      2567
+     1200 |     +0.0% |       0 |       0 |             0 |      2557
+     1210 |     +0.0% |       0 |       0 |             0 |      2547
+     1220 |     +0.0% |       0 |       0 |             0 |      2537
+     1230 |     +0.0% |       0 |       0 |             0 |      2527
+     1240 |     +0.0% |       0 |       0 |             0 |      2517
+     1250 |     +0.0% |       0 |       0 |             0 |      2507
+     1260 |     +0.0% |       0 |       0 |             0 |      2497
+     1270 |     +0.0% |       0 |       0 |             0 |      2487
+     1280 |     +0.0% |       0 |       0 |             0 |      2477
+     1290 |     +0.0% |       0 |       0 |             0 |      2467
+     1300 |     +0.0% |       0 |       0 |             0 |      2457
+     1310 |     +0.0% |       0 |       0 |             0 |      2447
+     1320 |     +0.0% |       0 |       0 |             0 |      2437
+     1330 |     +0.0% |       0 |       0 |             0 |      2427
+     1340 |     +0.0% |       0 |       0 |             0 |      2417
+     1350 |     +0.0% |       0 |       0 |             0 |      2407
+     1360 |     +0.0% |       0 |       0 |             0 |      2397
+     1370 |     +0.0% |       0 |       0 |             0 |      2387
+     1380 |     +0.0% |       0 |       0 |             0 |      2377
+     1390 |     +0.0% |       0 |       0 |             0 |      2367
+     1400 |     +0.0% |       0 |       0 |             0 |      2357
+     1410 |     +0.0% |       0 |       0 |             0 |      2347
+     1420 |     +0.0% |       0 |       0 |             0 |      2337
+     1430 |     +0.0% |       0 |       0 |             0 |      2327
+     1440 |     +0.0% |       0 |       0 |             0 |      2317
+     1450 |     +0.0% |       0 |       0 |             0 |      2307
+     1460 |     +0.0% |       0 |       0 |             0 |      2297
+     1470 |     +0.0% |       0 |       0 |             0 |      2287
+     1480 |     +0.0% |       0 |       0 |             0 |      2277
+     1490 |     +0.0% |       0 |       0 |             0 |      2267
+     1500 |     +0.0% |       0 |       0 |             0 |      2257
+     1510 |     +0.0% |       0 |       0 |             0 |      2247
+     1520 |     +0.0% |       0 |       0 |             0 |      2237
+     1530 |     +0.0% |       0 |       0 |             0 |      2227
+     1540 |     +0.0% |       0 |       0 |             0 |      2217
+     1550 |     +0.0% |       0 |       0 |             0 |      2207
+     1560 |     +0.0% |       0 |       0 |             0 |      2197
+     1570 |     +0.0% |       0 |       0 |             0 |      2187
+     1580 |     +0.0% |       0 |       0 |             0 |      2177
+     1590 |     +0.0% |       0 |       0 |             0 |      2167
+     1600 |     +0.0% |       0 |       0 |             0 |      2157
+     1610 |     +0.0% |       0 |       0 |             0 |      2147
+     1620 |     +0.0% |       0 |       0 |             0 |      2137
+     1630 |     +0.0% |       0 |       0 |             0 |      2127
+     1640 |     +0.0% |       0 |       0 |             0 |      2117
+     1650 |     +0.0% |       0 |       0 |             0 |      2107
+     1660 |     +0.0% |       0 |       0 |             0 |      2097
+     1670 |     +0.0% |       0 |       0 |             0 |      2087
+     1680 |     +0.0% |       0 |       0 |             0 |      2077
+     1690 |     +0.0% |       0 |       0 |             0 |      2067
+     1700 |     +0.0% |       0 |       0 |             0 |      2057
+     1710 |     +0.0% |       0 |       0 |             0 |      2047
+     1720 |     +0.0% |       0 |       0 |             0 |      2037
+     1730 |     +0.0% |       0 |       0 |             0 |      2027
+     1740 |     +0.0% |       0 |       0 |             0 |      2017
+     1750 |     +0.0% |       0 |       0 |             0 |      2007
+     1760 |     +0.0% |       0 |       0 |             0 |      1997
+     1770 |     +0.0% |       0 |       0 |             0 |      1987
+     1780 |     +0.0% |       0 |       0 |             0 |      1977
+     1790 |     +0.0% |       0 |       0 |             0 |      1967
+     1800 |     +0.0% |       0 |       0 |             0 |      1957
+     1810 |     +0.0% |       0 |       0 |             0 |      1947
+     1820 |     +0.0% |       0 |       0 |             0 |      1937
+     1830 |     +0.0% |       0 |       0 |             0 |      1927
+     1840 |     +0.0% |       0 |       0 |             0 |      1917
+     1850 |     +0.0% |       0 |       0 |             0 |      1907
+     1860 |     +0.0% |       0 |       0 |             0 |      1897
+     1870 |     +0.0% |       0 |       0 |             0 |      1887
+     1880 |     +0.0% |       0 |       0 |             0 |      1877
+     1890 |     +0.0% |       0 |       0 |             0 |      1867
+     1900 |     +0.0% |       0 |       0 |             0 |      1857
+     1910 |     +0.0% |       0 |       0 |             0 |      1847
+     1920 |     +0.0% |       0 |       0 |             0 |      1837
+     1930 |     +0.0% |       0 |       0 |             0 |      1827
+     1940 |     +0.0% |       0 |       0 |             0 |      1817
+     1950 |     +0.0% |       0 |       0 |             0 |      1807
+     1960 |     +0.0% |       0 |       0 |             0 |      1797
+     1970 |     +0.0% |       0 |       0 |             0 |      1787
+     1980 |     +0.0% |       0 |       0 |             0 |      1777
+     1990 |     +0.0% |       0 |       0 |             0 |      1767
+     2000 |     +0.0% |       0 |       0 |             0 |      1757
+     2010 |     +0.0% |       0 |       0 |             0 |      1747
+     2020 |     +0.0% |       0 |       0 |             0 |      1737
+     2030 |     +0.0% |       0 |       0 |             0 |      1727
+     2040 |     +0.0% |       0 |       0 |             0 |      1717
+     2050 |     +0.0% |       0 |       0 |             0 |      1707
+     2060 |     +0.0% |       0 |       0 |             0 |      1697
+     2070 |     +0.0% |       0 |       0 |             0 |      1687
+     2080 |     +0.0% |       0 |       0 |             0 |      1677
+     2090 |     +0.0% |       0 |       0 |             0 |      1667
+     2100 |     +0.0% |       0 |       0 |             0 |      1657
+     2110 |     +0.0% |       0 |       0 |             0 |      1647
+     2120 |     +0.0% |       0 |       0 |             0 |      1637
+     2130 |     +0.0% |       0 |       0 |             0 |      1627
+     2140 |     +0.0% |       0 |       0 |             0 |      1617
+     2150 |     +0.0% |       0 |       0 |             0 |      1607
+     2160 |     +0.0% |       0 |       0 |             0 |      1597
+     2170 |     +0.0% |       0 |       0 |             0 |      1587
+     2180 |     +0.0% |       0 |       0 |             0 |      1577
+     2190 |     +0.0% |       0 |       0 |             0 |      1567
+     2200 |     +0.0% |       0 |       0 |             0 |      1557
+     2210 |     +0.0% |       0 |       0 |             0 |      1547
+     2220 |     +0.0% |       0 |       0 |             0 |      1537
+     2230 |     +0.0% |       0 |       0 |             0 |      1527
+     2240 |     +0.0% |       0 |       0 |             0 |      1517
+     2250 |     +0.0% |       0 |       0 |             0 |      1507
+     2260 |     +0.0% |       0 |       0 |             0 |      1497
+     2270 |     +0.0% |       0 |       0 |             0 |      1487
+     2280 |     +0.0% |       0 |       0 |             0 |      1477
+     2290 |     +0.0% |       0 |       0 |             0 |      1467
+     2300 |     +0.0% |       0 |       0 |             0 |      1457
+     2310 |     +0.0% |       0 |       0 |             0 |      1447
+     2320 |     +0.0% |       0 |       0 |             0 |      1437
+     2330 |     +0.0% |       0 |       0 |             0 |      1427
+     2340 |     +0.0% |       0 |       0 |             0 |      1417
+     2350 |     +0.0% |       0 |       0 |             0 |      1407
+     2360 |     +0.0% |       0 |       0 |             0 |      1397
+     2370 |     +0.0% |       0 |       0 |             0 |      1387
+     2380 |     +0.0% |       0 |       0 |             0 |      1377
+     2390 |     +0.0% |       0 |       0 |             0 |      1367
+     2400 |     +0.0% |       0 |       0 |             0 |      1357
+     2410 |     +0.0% |       0 |       0 |             0 |      1347
+     2420 |     +0.0% |       0 |       0 |             0 |      1337
+     2430 |     +0.0% |       0 |       0 |             0 |      1327
+     2440 |     +0.0% |       0 |       0 |             0 |      1317
+     2450 |     +0.0% |       0 |       0 |             0 |      1307
+     2460 |     +0.0% |       0 |       0 |             0 |      1297
+     2470 |     +0.0% |       0 |       0 |             0 |      1287
+     2480 |     +0.0% |       0 |       0 |             0 |      1277
+     2490 |     +0.0% |       0 |       0 |             0 |      1267
+     2500 |     +0.0% |       0 |       0 |             0 |      1257
+     2510 |     +0.0% |       0 |       0 |             0 |      1247
+     2520 |     +0.0% |       0 |       0 |             0 |      1237
+     2530 |     +0.0% |       0 |       0 |             0 |      1227
+     2540 |     +0.0% |       0 |       0 |             0 |      1217
+     2550 |     +0.0% |       0 |       0 |             0 |      1207
+     2560 |     +0.0% |       0 |       0 |             0 |      1197
+     2570 |     +0.0% |       0 |       0 |             0 |      1187
+     2580 |     +0.0% |       0 |       0 |             0 |      1177
+     2590 |     +0.0% |       0 |       0 |             0 |      1167
+     2600 |     +0.0% |       0 |       0 |             0 |      1157
+     2610 |     +0.0% |       0 |       0 |             0 |      1147
+     2620 |     +0.0% |       0 |       0 |             0 |      1137
+     2630 |     +0.0% |       0 |       0 |             0 |      1127
+     2640 |     +0.0% |       0 |       0 |             0 |      1117
+     2650 |     +0.0% |       0 |       0 |             0 |      1107
+     2660 |     +0.0% |       0 |       0 |             0 |      1097
+     2670 |     +0.0% |       0 |       0 |             0 |      1087
+     2680 |     +0.0% |       0 |       0 |             0 |      1077
+     2690 |     +0.0% |       0 |       0 |             0 |      1067
+     2700 |     +0.0% |       0 |       0 |             0 |      1057
+     2710 |     +0.0% |       0 |       0 |             0 |      1047
+     2720 |     +0.0% |       0 |       0 |             0 |      1037
+     2730 |     +0.0% |       0 |       0 |             0 |      1027
+     2740 |     +0.0% |       0 |       0 |             0 |      1017
+     2750 |     +0.0% |       0 |       0 |             0 |      1007
+     2760 |     +0.0% |       0 |       0 |             0 |       997
+     2770 |     +0.0% |       0 |       0 |             0 |       987
+     2780 |     +0.0% |       0 |       0 |             0 |       977
+     2790 |     +0.0% |       0 |       0 |             0 |       967
+     2800 |     +0.0% |       0 |       0 |             0 |       957
+     2810 |     +0.0% |       0 |       0 |             0 |       947
+     2820 |     +0.0% |       0 |       0 |             0 |       937
+     2830 |     +0.0% |       0 |       0 |             0 |       927
+     2840 |     +0.0% |       0 |       0 |             0 |       917
+     2850 |     +0.0% |       0 |       0 |             0 |       907
+     2860 |     +0.0% |       0 |       0 |             0 |       897
+     2870 |     +0.0% |       0 |       0 |             0 |       887
+     2880 |     +0.0% |       0 |       0 |             0 |       877
+     2890 |     +0.0% |       0 |       0 |             0 |       867
+     2900 |     +0.0% |       0 |       0 |             0 |       857
+     2910 |     +0.0% |       0 |       0 |             0 |       847
+     2920 |     +0.0% |       0 |       0 |             0 |       837
+     2930 |     +0.0% |       0 |       0 |             0 |       827
+     2940 |     +0.0% |       0 |       0 |             0 |       817
+     2950 |     +0.0% |       0 |       0 |             0 |       807
+     2960 |     +0.0% |       0 |       0 |             0 |       797
+     2970 |     +0.0% |       0 |       0 |             0 |       787
+     2980 |     +0.0% |       0 |       0 |             0 |       777
+     2990 |     +0.0% |       0 |       0 |             0 |       767
+     3000 |     +0.0% |       0 |       0 |             0 |       757
+     3010 |     +0.0% |       0 |       0 |             0 |       747
+     3020 |     +0.0% |       0 |       0 |             0 |       737
+     3030 |     +0.0% |       0 |       0 |             0 |       727
+     3040 |     +0.0% |       0 |       0 |             0 |       717
+     3050 |     +0.0% |       0 |       0 |             0 |       707
+     3060 |     +0.0% |       0 |       0 |             0 |       697
+     3070 |     +0.0% |       0 |       0 |             0 |       687
+     3080 |     +0.0% |       0 |       0 |             0 |       677
+     3090 |     +0.0% |       0 |       0 |             0 |       667
+     3100 |     +0.0% |       0 |       0 |             0 |       657
+     3110 |     +0.0% |       0 |       0 |             0 |       647
+     3120 |     +0.0% |       0 |       0 |             0 |       637
+     3130 |     +0.0% |       0 |       0 |             0 |       627
+     3140 |     +0.0% |       0 |       0 |             0 |       617
+     3150 |     +0.0% |       0 |       0 |             0 |       607
+     3160 |     +0.0% |       0 |       0 |             0 |       597
+     3170 |     +0.0% |       0 |       0 |             0 |       587
+     3180 |     +0.0% |       0 |       0 |             0 |       577
+     3190 |     +0.0% |       0 |       0 |             0 |       567
+     3200 |     +0.0% |       0 |       0 |             0 |       557
+     3210 |     +0.0% |       0 |       0 |             0 |       547
+     3220 |     +0.0% |       0 |       0 |             0 |       537
+     3230 |     +0.0% |       0 |       0 |             0 |       527
+     3240 |     +0.0% |       0 |       0 |             0 |       517
+     3250 |     +0.0% |       0 |       0 |             0 |       507
+     3260 |     +0.0% |       0 |       0 |             0 |       497
+     3270 |     +0.0% |       0 |       0 |             0 |       487
+     3280 |     +0.0% |       0 |       0 |             0 |       477
+     3290 |     +0.0% |       0 |       0 |             0 |       467
+     3300 |     +0.0% |       0 |       0 |             0 |       457
+     3310 |     +0.0% |       0 |       0 |             0 |       447
+     3320 |     +0.0% |       0 |       0 |             0 |       437
+     3330 |     +0.0% |       0 |       0 |             0 |       427
+     3340 |     +0.0% |       0 |       0 |             0 |       417
+     3350 |     +0.0% |       0 |       0 |             0 |       407
+     3360 |     +0.0% |       0 |       0 |             0 |       397
+     3370 |     +0.0% |       0 |       0 |             0 |       387
+     3380 |     +0.0% |       0 |       0 |             0 |       377
+     3390 |     +0.0% |       0 |       0 |             0 |       367
+     3400 |     +0.0% |       0 |       0 |             0 |       357
+     3410 |     +0.0% |       0 |       0 |             0 |       347
+     3420 |     +0.0% |       0 |       0 |             0 |       337
+     3430 |     +0.0% |       0 |       0 |             0 |       327
+     3440 |     +0.0% |       0 |       0 |             0 |       317
+     3450 |     +0.0% |       0 |       0 |             0 |       307
+     3460 |     +0.0% |       0 |       0 |             0 |       297
+     3470 |     +0.0% |       0 |       0 |             0 |       287
+     3480 |     +0.0% |       0 |       0 |             0 |       277
+     3490 |     +0.0% |       0 |       0 |             0 |       267
+     3500 |     +0.0% |       0 |       0 |             0 |       257
+     3510 |     +0.0% |       0 |       0 |             0 |       247
+     3520 |     +0.0% |       0 |       0 |             0 |       237
+     3530 |     +0.0% |       0 |       0 |             0 |       227
+     3540 |     +0.0% |       0 |       0 |             0 |       217
+     3550 |     +0.0% |       0 |       0 |             0 |       207
+     3560 |     +0.0% |       0 |       0 |             0 |       197
+     3570 |     +0.0% |       0 |       0 |             0 |       187
+     3580 |     +0.0% |       0 |       0 |             0 |       177
+     3590 |     +0.0% |       0 |       0 |             0 |       167
+     3600 |     +0.0% |       0 |       0 |             0 |       157
+     3610 |     +0.0% |       0 |       0 |             0 |       147
+     3620 |     +0.0% |       0 |       0 |             0 |       137
+     3630 |     +0.0% |       0 |       0 |             0 |       127
+     3640 |     +0.0% |       0 |       0 |             0 |       117
+     3650 |     +0.0% |       0 |       0 |             0 |       107
+     3660 |     +0.0% |       0 |       0 |             0 |        97
+     3670 |     +0.0% |       0 |       0 |             0 |        87
+     3680 |     +0.0% |       0 |       0 |             0 |        77
+     3690 |     +0.0% |       0 |       0 |             0 |        67
+     3700 |     +0.0% |       0 |       0 |             0 |        57
+     3710 |     +0.0% |       0 |       0 |             0 |        47
+     3720 |     +0.0% |       0 |       0 |             0 |        37
+     3730 |     +0.0% |       0 |       0 |             0 |        27
+     3740 |     +0.0% |       0 |       0 |             0 |        17
+     3750 |     +0.0% |       0 |       0 |             0 |         7
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+global_route -start_incremental
+detailed_placement
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL           49535.9 u
+legalized HPWL          49535.9 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file ./reports/sky130hd/dot_product/base/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+repair_timing -verbose -setup_margin 0 -hold_margin 0 -repair_tns 100
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0094] Found 11 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 11 out of 11 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   TNS      |  Viol  | Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpt
+--------------------------------------------------------------------------------------------------------------
+        0 |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.410 |       -1.9 |     11 | dot_out\[19\]$_SDFF_PP0_/D
+       10 |       1 |       3 |        0 |      0 |     0 |    +0.1% |   -0.269 |       -1.5 |     11 | dot_out\[16\]$_SDFF_PP0_/D
+       20 |       1 |       8 |        0 |      0 |     4 |    +0.2% |   -0.267 |       -1.3 |     11 | dot_out\[16\]$_SDFF_PP0_/D
+       27 |       1 |       8 |        0 |      0 |     4 |    +0.2% |   -0.214 |       -1.1 |     11 | dot_out\[16\]$_SDFF_PP0_/D
+       30 |       1 |       8 |        0 |      0 |     5 |    +0.2% |   -0.225 |       -1.1 |     11 | dot_out\[16\]$_SDFF_PP0_/D
+       40 |       1 |      16 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.7 |     11 | dot_out\[19\]$_SDFF_PP0_/D
+       42 |       1 |      18 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.7 |     11 | dot_out\[19\]$_SDFF_PP0_/D
+       44 |       1 |      19 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.6 |      9 | dot_out\[19\]$_SDFF_PP0_/D
+       46 |       2 |      19 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.5 |      7 | dot_out\[19\]$_SDFF_PP0_/D
+       47 |       2 |      19 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.5 |      7 | dot_out\[19\]$_SDFF_PP0_/D
+       49 |       2 |      20 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.5 |      5 | dot_out\[19\]$_SDFF_PP0_/D
+       50 |       2 |      20 |        2 |      0 |     6 |    +0.3% |   -0.193 |       -0.5 |      5 | dot_out\[19\]$_SDFF_PP0_/D
+       53 |       2 |      22 |        2 |      0 |     7 |    +0.3% |   -0.193 |       -0.5 |      3 | dot_out\[19\]$_SDFF_PP0_/D
+       57 |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      1 | dot_out\[19\]$_SDFF_PP0_/D
+       58 |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      0 | dot_out\[19\]$_SDFF_PP0_/D
+       59 |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      0 | dot_out\[19\]$_SDFF_PP0_/D
+       60 |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      0 | dot_out\[19\]$_SDFF_PP0_/D
+       60 |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      0 | dot_out\[19\]$_SDFF_PP0_/D
+      60* |       2 |      24 |        2 |      0 |     8 |    +0.4% |   -0.193 |       -0.4 |      4 | dot_out\[19\]$_SDFF_PP0_/D
+      63* |       2 |      25 |        2 |      0 |     9 |    +0.4% |   -0.134 |       -0.3 |      4 | dot_out\[16\]$_SDFF_PP0_/D
+      64* |       2 |      25 |        2 |      0 |     9 |    +0.4% |   -0.134 |       -0.3 |      4 | dot_out\[16\]$_SDFF_PP0_/D
+      65* |       2 |      25 |        2 |      0 |     9 |    +0.4% |   -0.134 |       -0.3 |      4 | dot_out\[16\]$_SDFF_PP0_/D
+      66* |       2 |      25 |        2 |      0 |     9 |    +0.4% |   -0.134 |       -0.3 |      4 | dot_out\[16\]$_SDFF_PP0_/D
+    final |       2 |      25 |        2 |      0 |     9 |    +0.4% |   -0.134 |       -0.3 |      4 | dot_out\[16\]$_SDFF_PP0_/D
+--------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0059] Removed 2 buffers.
+[INFO RSZ-0040] Inserted 2 buffers.
+[INFO RSZ-0051] Resized 25 instances, 25 sized up, 0 sized down.
+[INFO RSZ-0043] Swapped pins on 9 instances.
+[WARNING RSZ-0062] Unable to repair all setup violations.
+[INFO RSZ-0033] No hold violations found.
+global_route -start_incremental
+detailed_placement
+Placement Analysis
+---------------------------------
+total displacement         88.2 u
+average displacement        0.0 u
+max displacement            5.9 u
+original HPWL           49543.2 u
+legalized HPWL          49658.6 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file ./reports/sky130hd/dot_product/base/congestion_post_repair_timing.rpt
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file ./reports/sky130hd/dot_product/base/congestion_post_recover_power.rpt
+Repair antennas...
+[INFO GRT-0012] Found 2 antenna violations.
+[INFO GRT-0302] Inserted 1 jumpers for 1 nets.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO GRT-0015] Inserted 1 diodes.
+[INFO GRT-0012] Found 0 antenna violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 27326 u^2 55% utilization.
+[INFO FLW-0007] clock clk period 4.500000
+[INFO FLW-0008] Clock clk period 4.414
+[INFO FLW-0009] Clock clk slack -0.147
+[INFO FLW-0011] Path endpoint path count 200
+Elapsed time: 0:15.71[h:]min:sec. CPU time: user 74.01 sys 4.01 (496%). Peak memory: 246540KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_2_route detail_route
+Running detail_route.tcl, stage 5_2_route
+detailed_route -output_drc ./reports/sky130hd/dot_product/base/5_route_drc.rpt -output_maze ./results/sky130hd/dot_product/base/maze.log -bottom_routing_layer met1 -top_routing_layer met5 -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO DRT-0149] Reading tech and libs.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+
+Units:                1000
+Number of layers:     13
+Number of macros:     441
+Number of vias:       29
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+
+Design:                   dot_product
+Die area:                 ( 0 0 ) ( 226820 226820 )
+Number of track patterns: 12
+Number of DEF vias:       0
+Number of components:     3524
+Number of terminals:      150
+Number of snets:          2
+Number of nets:           3742
+
+[INFO DRT-0167] List of default vias:
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 125.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete FR_MASTERSLICE.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete li1.
+[INFO DRT-0024]   Complete mcon.
+[INFO DRT-0024]   Complete met1.
+[INFO DRT-0024]   Complete via.
+[INFO DRT-0024]   Complete met2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete met3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete met4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete met5.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 84728.
+[INFO DRT-0033] mcon shape region query size = 50632.
+[INFO DRT-0033] met1 shape region query size = 18941.
+[INFO DRT-0033] via shape region query size = 3320.
+[INFO DRT-0033] met2 shape region query size = 2071.
+[INFO DRT-0033] via2 shape region query size = 2656.
+[INFO DRT-0033] met3 shape region query size = 2063.
+[INFO DRT-0033] via3 shape region query size = 2656.
+[INFO DRT-0033] met4 shape region query size = 808.
+[INFO DRT-0033] via4 shape region query size = 128.
+[INFO DRT-0033] met5 shape region query size = 144.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 928 pins.
+[INFO DRT-0079]   Complete 100 unique inst patterns.
+[INFO DRT-0081]   Complete 125 unique inst patterns.
+[INFO DRT-0084]   Complete 1811 groups.
+#scanned instances     = 3524
+#unique  instances     = 125
+#stdCellGenAp          = 4113
+#stdCellValidPlanarAp  = 39
+#stdCellValidViaAp     = 2542
+#stdCellPinNoAp        = 8
+#stdCellPinCnt         = 9273
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:01:14, elapsed time = 00:00:11, memory = 196.41 (MB), peak = 196.41 (MB)
+
+[INFO DRT-0157] Number of guides:     19467
+
+[INFO DRT-0169] Post process guides.
+[INFO DRT-0176] GCELLGRID X 0 DO 32 STEP 6900 ;
+[INFO DRT-0177] GCELLGRID Y 0 DO 32 STEP 6900 ;
+[INFO DRT-0028]   Complete FR_MASTERSLICE.
+[INFO DRT-0028]   Complete Fr_VIA.
+[INFO DRT-0028]   Complete li1.
+[INFO DRT-0028]   Complete mcon.
+[INFO DRT-0028]   Complete met1.
+[INFO DRT-0028]   Complete via.
+[INFO DRT-0028]   Complete met2.
+[INFO DRT-0028]   Complete via2.
+[INFO DRT-0028]   Complete met3.
+[INFO DRT-0028]   Complete via3.
+[INFO DRT-0028]   Complete met4.
+[INFO DRT-0028]   Complete via4.
+[INFO DRT-0028]   Complete met5.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0035]   Complete FR_MASTERSLICE (guide).
+[INFO DRT-0035]   Complete Fr_VIA (guide).
+[INFO DRT-0035]   Complete li1 (guide).
+[INFO DRT-0035]   Complete mcon (guide).
+[INFO DRT-0035]   Complete met1 (guide).
+[INFO DRT-0035]   Complete via (guide).
+[INFO DRT-0035]   Complete met2 (guide).
+[INFO DRT-0035]   Complete via2 (guide).
+[INFO DRT-0035]   Complete met3 (guide).
+[INFO DRT-0035]   Complete via3 (guide).
+[INFO DRT-0035]   Complete met4 (guide).
+[INFO DRT-0035]   Complete via4 (guide).
+[INFO DRT-0035]   Complete met5 (guide).
+[INFO DRT-0036] FR_MASTERSLICE guide region query size = 0.
+[INFO DRT-0036] FR_VIA guide region query size = 0.
+[INFO DRT-0036] li1 guide region query size = 6869.
+[INFO DRT-0036] mcon guide region query size = 0.
+[INFO DRT-0036] met1 guide region query size = 5761.
+[INFO DRT-0036] via guide region query size = 0.
+[INFO DRT-0036] met2 guide region query size = 2617.
+[INFO DRT-0036] via2 guide region query size = 0.
+[INFO DRT-0036] met3 guide region query size = 195.
+[INFO DRT-0036] via3 guide region query size = 0.
+[INFO DRT-0036] met4 guide region query size = 21.
+[INFO DRT-0036] via4 guide region query size = 0.
+[INFO DRT-0036] met5 guide region query size = 0.
+[INFO DRT-0179] Init gr pin query.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 202.41 (MB), peak = 202.41 (MB)
+[INFO DRT-0245] skipped writing guide updates to database.
+[INFO DRT-0185] Post process initialize RPin region query.
+[INFO DRT-0181] Start track assignment.
+[INFO DRT-0184] Done with 9507 vertical wires in 1 frboxes and 5956 horizontal wires in 1 frboxes.
+[INFO DRT-0186] Done with 723 vertical wires in 1 frboxes and 1398 horizontal wires in 1 frboxes.
+[INFO DRT-0182] Complete track assignment.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 267.41 (MB), peak = 267.41 (MB)
+[INFO DRT-0187] Start routing data preparation.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 268.29 (MB), peak = 268.29 (MB)
+[INFO DRT-0194] Start detail routing.
+[INFO DRT-0195] Start 0th optimization iteration.
+    Completing 10% with 0 violations.
+    elapsed time = 00:00:00, memory = 451.05 (MB).
+    Completing 20% with 0 violations.
+    elapsed time = 00:00:00, memory = 430.75 (MB).
+    Completing 30% with 0 violations.
+    elapsed time = 00:00:00, memory = 375.53 (MB).
+    Completing 40% with 86 violations.
+    elapsed time = 00:00:01, memory = 537.02 (MB).
+    Completing 50% with 86 violations.
+    elapsed time = 00:00:01, memory = 517.59 (MB).
+    Completing 60% with 86 violations.
+    elapsed time = 00:00:02, memory = 467.73 (MB).
+    Completing 70% with 226 violations.
+    elapsed time = 00:00:02, memory = 546.98 (MB).
+    Completing 80% with 226 violations.
+    elapsed time = 00:00:03, memory = 547.36 (MB).
+    Completing 90% with 295 violations.
+    elapsed time = 00:00:03, memory = 643.50 (MB).
+    Completing 100% with 421 violations.
+    elapsed time = 00:00:04, memory = 614.77 (MB).
+[INFO DRT-0199]   Number of violations = 478.
+Viol/Layer        mcon   met1   met2   met3
+Cut Spacing          1      0      0      0
+Metal Spacing        0     99     21      0
+Min Hole             0      1      0      0
+Recheck              0     43     13      1
+Short                0    285     14      0
+[INFO DRT-0267] cpu time = 00:00:16, elapsed time = 00:00:04, memory = 967.77 (MB), peak = 967.77 (MB)
+Total wire length = 52920 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 24512 um.
+Total wire length on LAYER met2 = 24722 um.
+Total wire length on LAYER met3 = 2879 um.
+Total wire length on LAYER met4 = 806 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 17012.
+Up-via summary (total 17012):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8252
+           met1     8447
+           met2      279
+           met3       34
+           met4        0
+------------------------
+               17012
+
+
+[INFO DRT-0195] Start 1st optimization iteration.
+    Completing 10% with 478 violations.
+    elapsed time = 00:00:00, memory = 1041.14 (MB).
+    Completing 20% with 478 violations.
+    elapsed time = 00:00:00, memory = 1045.14 (MB).
+    Completing 30% with 478 violations.
+    elapsed time = 00:00:00, memory = 1050.02 (MB).
+    Completing 40% with 389 violations.
+    elapsed time = 00:00:01, memory = 1068.02 (MB).
+    Completing 50% with 389 violations.
+    elapsed time = 00:00:02, memory = 1068.02 (MB).
+    Completing 60% with 389 violations.
+    elapsed time = 00:00:02, memory = 1068.02 (MB).
+    Completing 70% with 322 violations.
+    elapsed time = 00:00:03, memory = 1092.52 (MB).
+    Completing 80% with 322 violations.
+    elapsed time = 00:00:03, memory = 1092.77 (MB).
+    Completing 90% with 280 violations.
+    elapsed time = 00:00:04, memory = 1132.64 (MB).
+    Completing 100% with 156 violations.
+    elapsed time = 00:00:05, memory = 1106.89 (MB).
+[INFO DRT-0199]   Number of violations = 156.
+Viol/Layer        met1   met2
+Metal Spacing       40     11
+Short              104      1
+[INFO DRT-0267] cpu time = 00:00:18, elapsed time = 00:00:05, memory = 1107.14 (MB), peak = 1138.77 (MB)
+Total wire length = 52424 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 24311 um.
+Total wire length on LAYER met2 = 24469 um.
+Total wire length on LAYER met3 = 2872 um.
+Total wire length on LAYER met4 = 771 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 16854.
+Up-via summary (total 16854):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8246
+           met1     8312
+           met2      268
+           met3       28
+           met4        0
+------------------------
+               16854
+
+
+[INFO DRT-0195] Start 2nd optimization iteration.
+    Completing 10% with 156 violations.
+    elapsed time = 00:00:00, memory = 1107.14 (MB).
+    Completing 20% with 156 violations.
+    elapsed time = 00:00:00, memory = 1110.64 (MB).
+    Completing 30% with 135 violations.
+    elapsed time = 00:00:00, memory = 1110.64 (MB).
+    Completing 40% with 135 violations.
+    elapsed time = 00:00:01, memory = 1113.64 (MB).
+    Completing 50% with 135 violations.
+    elapsed time = 00:00:01, memory = 1113.64 (MB).
+    Completing 60% with 120 violations.
+    elapsed time = 00:00:01, memory = 1113.64 (MB).
+    Completing 70% with 120 violations.
+    elapsed time = 00:00:02, memory = 1123.02 (MB).
+    Completing 80% with 118 violations.
+    elapsed time = 00:00:02, memory = 1123.27 (MB).
+    Completing 90% with 118 violations.
+    elapsed time = 00:00:03, memory = 1127.52 (MB).
+    Completing 100% with 112 violations.
+    elapsed time = 00:00:04, memory = 1127.52 (MB).
+[INFO DRT-0199]   Number of violations = 112.
+Viol/Layer        met1   met2
+Metal Spacing       26      5
+Short               81      0
+[INFO DRT-0267] cpu time = 00:00:13, elapsed time = 00:00:04, memory = 1127.89 (MB), peak = 1138.77 (MB)
+Total wire length = 52353 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 24305 um.
+Total wire length on LAYER met2 = 24429 um.
+Total wire length on LAYER met3 = 2847 um.
+Total wire length on LAYER met4 = 771 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 16798.
+Up-via summary (total 16798):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8243
+           met1     8273
+           met2      254
+           met3       28
+           met4        0
+------------------------
+               16798
+
+
+[INFO DRT-0195] Start 3rd optimization iteration.
+    Completing 10% with 112 violations.
+    elapsed time = 00:00:00, memory = 1127.89 (MB).
+    Completing 20% with 112 violations.
+    elapsed time = 00:00:00, memory = 1131.14 (MB).
+    Completing 30% with 112 violations.
+    elapsed time = 00:00:00, memory = 1135.27 (MB).
+    Completing 40% with 86 violations.
+    elapsed time = 00:00:01, memory = 1139.18 (MB).
+    Completing 50% with 86 violations.
+    elapsed time = 00:00:01, memory = 1142.55 (MB).
+    Completing 60% with 86 violations.
+    elapsed time = 00:00:02, memory = 1150.80 (MB).
+    Completing 70% with 46 violations.
+    elapsed time = 00:00:02, memory = 1154.18 (MB).
+    Completing 80% with 46 violations.
+    elapsed time = 00:00:03, memory = 1154.18 (MB).
+    Completing 90% with 34 violations.
+    elapsed time = 00:00:04, memory = 1155.30 (MB).
+    Completing 100% with 13 violations.
+    elapsed time = 00:00:05, memory = 1157.73 (MB).
+[INFO DRT-0199]   Number of violations = 13.
+Viol/Layer        met1
+Metal Spacing        9
+Short                4
+[INFO DRT-0267] cpu time = 00:00:10, elapsed time = 00:00:05, memory = 1157.73 (MB), peak = 1165.18 (MB)
+Total wire length = 52338 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 23936 um.
+Total wire length on LAYER met2 = 24457 um.
+Total wire length on LAYER met3 = 3172 um.
+Total wire length on LAYER met4 = 771 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 16887.
+Up-via summary (total 16887):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8243
+           met1     8300
+           met2      316
+           met3       28
+           met4        0
+------------------------
+               16887
+
+
+[INFO DRT-0195] Start 4th optimization iteration.
+    Completing 10% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 20% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 30% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 40% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 50% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 60% with 13 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 70% with 12 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 80% with 12 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 90% with 0 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+    Completing 100% with 0 violations.
+    elapsed time = 00:00:00, memory = 1157.73 (MB).
+[INFO DRT-0199]   Number of violations = 0.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1157.73 (MB), peak = 1165.18 (MB)
+Total wire length = 52337 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 23925 um.
+Total wire length on LAYER met2 = 24463 um.
+Total wire length on LAYER met3 = 3178 um.
+Total wire length on LAYER met4 = 771 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 16892.
+Up-via summary (total 16892):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8242
+           met1     8304
+           met2      318
+           met3       28
+           met4        0
+------------------------
+               16892
+
+
+[INFO DRT-0198] Complete detail routing.
+Total wire length = 52337 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 23925 um.
+Total wire length on LAYER met2 = 24463 um.
+Total wire length on LAYER met3 = 3178 um.
+Total wire length on LAYER met4 = 771 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 16892.
+Up-via summary (total 16892):
+
+------------------------
+ FR_MASTERSLICE        0
+            li1     8242
+           met1     8304
+           met2      318
+           met3       28
+           met4        0
+------------------------
+               16892
+
+
+[INFO DRT-0267] cpu time = 00:00:59, elapsed time = 00:00:20, memory = 1157.98 (MB), peak = 1165.18 (MB)
+
+[INFO DRT-0180] Post processing.
+Took 32 seconds: detailed_route -output_drc ./reports/sky130hd/dot_product/base/5_route_drc.rpt -output_maze ./results/sky130hd/dot_product/base/maze.log -bottom_routing_layer met1 -top_routing_layer met5 -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO GRT-0012] Found 0 antenna violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Elapsed time: 0:33.40[h:]min:sec. CPU time: user 137.17 sys 1.28 (414%). Peak memory: 1193144KB.
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 5_3_fillcell fillcell
+Running fillcell.tcl, stage 5_3_fillcell
+filler_placement "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_8"
+[INFO DPL-0001] Placed 4441 filler instances.
+Elapsed time: 0:00.38[h:]min:sec. CPU time: user 0.33 sys 0.04 (98%). Peak memory: 125164KB.
+cp ./results/sky130hd/dot_product/base/5_3_fillcell.odb ./results/sky130hd/dot_product/base/5_route.odb
+cp ./results/sky130hd/dot_product/base/5_1_grt.sdc ./results/sky130hd/dot_product/base/5_route.sdc
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 6_1_fill density_fill
+Running density_fill.tcl, stage 6_1_fill
+exec cp ./results/sky130hd/dot_product/base/5_route.odb ./results/sky130hd/dot_product/base/6_1_fill.odb
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.24 sys 0.07 (98%). Peak memory: 115316KB.
+cp ./results/sky130hd/dot_product/base/5_route.sdc ./results/sky130hd/dot_product/base/6_1_fill.sdc
+/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/scripts/flow.sh 6_report final_report
+Running final_report.tcl, stage 6_report
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation dot_product (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 7947 rc segments
+[INFO RCX-0439] Coupling Cap extraction dot_product ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 55% of 16404 wires extracted
+[INFO RCX-0442] 100% of 16404 wires extracted
+[INFO RCX-0045] Extract 3742 nets, 11673 rsegs, 11673 caps, 14979 ccs
+[INFO RCX-0443] 3742 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Supply voltage   : 1.80e+00 V
+Worstcase voltage: 1.79e+00 V
+Average voltage  : 1.80e+00 V
+Average IR drop  : 3.27e-03 V
+Worstcase IR drop: 7.11e-03 V
+Percentage drop  : 0.39 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+[INFO PSM-0073] Using bump pattern with x-pitch 140.0000um, y-pitch 140.0000um, and size 70.0000um with an reduction factor of 3x.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 5.92e-03 V
+Average voltage  : 2.42e-03 V
+Average IR drop  : 2.42e-03 V
+Worstcase IR drop: 5.92e-03 V
+Percentage drop  : 0.33 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                              4441   21798.41
+  Tap cell                                672     840.81
+  Antenna cell                              1       2.50
+  Buffer                                   17      63.81
+  Clock buffer                             19     432.92
+  Timing Repair Buffer                    155     624.35
+  Inverter                                647    2529.93
+  Clock inverter                           13     158.90
+  Sequential cell                         148    2966.60
+  Multi-Input combinational cell         1852   20547.21
+  Total                                  7965   49965.42
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 27326 u^2 55% utilization.
+Elapsed time: 0:04.59[h:]min:sec. CPU time: user 2.96 sys 1.93 (106%). Peak memory: 310824KB.
+cp ./results/sky130hd/dot_product/base/5_route.sdc ./results/sky130hd/dot_product/base/6_final.sdc
+cp /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef ./objects/sky130hd/dot_product/base/klayout_tech.lef
+SC_LEF_RELATIVE_PATH="../../../../platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef"; \
+OTHER_LEFS_RELATIVE_PATHS=$(echo "<lef-files>$(realpath --relative-to=./results/sky130hd/dot_product/base ./objects/sky130hd/dot_product/base/klayout_tech.lef)</lef-files>"); \
+sed 's,<lef-files>.*</lef-files>,<lef-files>'"$SC_LEF_RELATIVE_PATH"'</lef-files>'"$OTHER_LEFS_RELATIVE_PATHS"',g' /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/sky130hd.lyt > ./objects/sky130hd/dot_product/base/klayout.lyt
+sed -i 's,<map-file>.*</map-file>,<map-file>/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/*map</map-file>,g' ./objects/sky130hd/dot_product/base/klayout.lyt
+(env time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' stdbuf -o L /home/gmrd01/iclad_hackathon/tools/klayout-0.30.2/bin-release/klayout -zz -rd design_name=dot_product \
+        -rd in_def=./results/sky130hd/dot_product/base/6_final.def \
+        -rd in_files="/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/gds/sky130_fd_sc_hd.gds  " \
+        -rd seal_file="" \
+        -rd out_file=./results/sky130hd/dot_product/base/6_1_merged.gds \
+        -rd tech_file=./objects/sky130hd/dot_product/base/klayout.lyt \
+        -rd layer_map= \
+        -r /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/util/def2stream.py) 2>&1 | tee /home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/logs/sky130hd/dot_product/base/6_1_merge.log
+[INFO] Reporting cells prior to loading DEF ...
+	/home/gmrd01/iclad_hackathon/tools/OpenROAD-flow-scripts/flow/platforms/sky130hd/gds/sky130_fd_sc_hd.gds
+[INFO] All LEF cells have matching GDS/OAS cells
+[INFO] No orphan cells in the final layout
+Elapsed time: 0:01.41[h:]min:sec. CPU time: user 1.05 sys 0.26 (93%). Peak memory: 435056KB.
+cp results/sky130hd/dot_product/base/6_1_merged.gds results/sky130hd/dot_product/base/6_final.gds
+./logs/sky130hd/dot_product/base
+Log                            Elapsed seconds Peak Memory/MB
+1_1_yosys                                    2             65
+1_1_yosys_canonicalize                       0             52
+2_1_floorplan                                0            118
+2_2_floorplan_macro                          0            107
+2_3_floorplan_tapcell                        0            106
+2_4_floorplan_pdn                            0            112
+3_1_place_gp_skip_io                         1            111
+3_2_place_iop                                0            109
+3_3_place_gp                                 6            187
+3_4_place_resized                            2            131
+3_5_place_dp                                 2            128
+4_1_cts                                      3            143
+5_1_grt                                     15            240
+5_2_route                                   33           1165
+5_3_fillcell                                 0            122
+6_1_fill                                     0            112
+6_1_merge                                    1            424
+6_report                                     4            303
+Total                                       69           1165
