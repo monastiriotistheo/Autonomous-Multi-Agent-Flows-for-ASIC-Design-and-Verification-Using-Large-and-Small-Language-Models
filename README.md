@@ -1,7 +1,7 @@
 # Autonomous Multi-Agent Flows for ASIC Design and Verification Using Large and Small Language Models
 
 > **Diploma Thesis**  
-> **University of Thessaly** | Department of Electrical and Computer Engineering | Volos, Greece 
+> **University of Thessaly** | Department of Electrical and Computer Engineering | Volos, Greece  
 > **Author:** Monastiriotis Theodoros  
 
 ---
